@@ -1,2 +1,2 @@
 # Urbanity
-Social Network Traveling Site
+Social Network For Travelers
