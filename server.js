@@ -123,7 +123,7 @@ passport.deserializeUser(function(obj, done) {
 app.use(express.static(__dirname + '/public'));
 
 // Connections
-var port = 3000;
+var port = process.env.PORT || env.port;
 
 var mongooseUri = 'mongodb://localhost/urbanity';
 mongoose.connect(mongooseUri);
