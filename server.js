@@ -1,11 +1,12 @@
 var express = require('express');
+var session = require('express-session')
 var passport = require('passport');
 var cors = require('cors');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var app = express();
 var mongoose = require('mongoose');
 var env = require('./env.js');
+var port = process.env.PORT || env.port;
 
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
@@ -30,11 +31,24 @@ var isAuthed = function (req, res, next) {
 
 
 
+
+
+
+passport.serializeUser(function(user, done) {
+  //TODO serialize user id from database
+  done(null, user);
+});
+
+passport.deserializeUser(function(obj, done) {
+  //TODO query database with id
+  done(null, obj)
+})
+
 passport.use(new GoogleStrategy({
-    clientID: (process.env.googleClientId || env.googleClientID),
-    clientSecret: (process.env.googleClientSecret || env.googleClientSecret),
-    callbackURL: (process.env.googleCallbackURL || env.googleCallbackURL),
-    passReqToCallback: true
+      clientID: env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.googleClientSecret || env.googleClientSecret,
+      callbackURL: process.env.googleCallbackURL || env.googleCallbackURL,
+      passReqToCallback: true
   },
   function(req, token, tokenSecret, profile, done){
     // Successful authentication, create or update user.
@@ -47,7 +61,7 @@ passport.use(new GoogleStrategy({
       done(err, profile);*/
       done(null, profile);
   })
-}));
+);
 
 passport.use(new TwitterStrategy({
     consumerKey: process.env.CONSUMER_KEY || env.twitterConsumerKey,
@@ -88,16 +102,20 @@ passport.use(new FacebookStrategy({
   }, function(err){
       done(err, profile);
   })
-  }));
+  );
 
+
+// Connections
+var app = express();
+app.use(express.static(__dirname + '/public'));
 
 //Middleware
 app.use(bodyParser.json());
-app.user(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 //Session and Passport
-app.use(Session({
+app.use(session({
   secret: process.env.SESSION_SECRET || env.session_secret,
   saveUninitialized: true,
   resave: true
@@ -105,25 +123,52 @@ app.use(Session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.serializeUser(function(user, done) {
-  //TODO serialize user id from database
-  done(null, user);
-});
-
-passport.deserializeUser(function(obj, done) {
-  //TODO query database with id
-  done(null, obj)
-})
 
 //TODO add authentication endpoints
 
+app.get('/auth/google', passport.authenticate('google', {scope: 'https://www.googleapis.com/auth/plus.login'}));
+app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }),
+  function(req, res) {
+
+    //successful authentication redirect, redirect user to welcome screen.
+    // User.getUser(req.user.id).then(function(userProfile) {
+    // currentUser = userProfile;
+    // })
+    // //console.log(currentUser);
+    // return res.redirect('/#/welcome');
+    // //res.status(200).json(req.user);
+    console.log('logged in with google')
+  });
+
+app.get('/auth/facebook', passport.authenticate('facebook'));
+app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/' }),
+  function(req, res) {
+    // //console.log(req.session);
+    // //console.log(req.isAuthenticated());
+    // //successful authentication redirect, redirect user to welcome screen.
+    // console.log('req.user: ');
+    // console.log(req.user);
+    // User.getUser(req.user.id).then(function(userProfile) {
+    // currentUser = userProfile;
+    // })
+    // //console.log(currentUser);
+    // return res.redirect('/#/welcome');
+    // //res.status(200).json(req.user);
+    console.log('logged in with facebook')
+  });
+
+app.get('/auth/twitter', passport.authenticate('twitter'));
+app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    console.log('logged in with twitter')
+    // res.redirect('/');
+  });
 
 
-
-app.use(express.static(__dirname + '/public'));
-
-// Connections
-var port = 3000;
+// API endpoints
+// here
+//
 
 var mongooseUri = 'mongodb://localhost/urbanity';
 mongoose.connect(mongooseUri);
