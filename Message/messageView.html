@@ -1,0 +1,13 @@
+
+  <h3> Messages </h3>
+
+    <p ng-repeat='message in room.messages'> 
+      {{message.user}}: {{message.text}}
+</p>
+  <form ng-submit='sendMessage()'>
+    <input ng-model='message'>
+    <input type='submit' value='Send'>
+</form>
+
+<h3>users</h3>
+    <p ng-repeat='user in room.users'> {{user}} </p>

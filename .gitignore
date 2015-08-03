@@ -2,3 +2,5 @@
 /public/bower_components
 .DS_Store
 .idea
+env.js
+npm-debug.log
