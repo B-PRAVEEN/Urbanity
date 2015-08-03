@@ -5,8 +5,8 @@ var q = require('q');
 
 var userSchema = new Schema({
     name: {
-        first: {type: String, trim: true, default: '', validate: [validateLocalStrategyProperty, 'Please fill in your first name']},
-        last: {type: String, trim: true, default: '', validate: [validateLocalStrategyProperty, 'Please fill in your last name']}
+        first: {type: String, trim: true, default: '', /*validate: [validateLocalStrategyProperty, 'Please enter your first name']*/},
+        last: {type: String, trim: true, default: '', /*validate: [validateLocalStrategyProperty, 'Please enter your last name']*/}
     },
     gender: {
         type: String,
@@ -54,19 +54,19 @@ var userSchema = new Schema({
         type: String,
         trim: true,
         default: '',
-        validate: [validateLocalStrategyProperty, 'Please fill in your email'],
-        match: [/.+\@.+\..+/, 'Please fill a valid email address']
+        //validate: [validateLocalStrategyProperty, 'Please provide your email'],
+        //match: [/.+\@.+\..+/, 'Please enter a valid email address']
     },
     username: {
         type: String,
-        unique: 'Username already exists',
-        required: 'Please fill in a username',
+        //unique: 'Username already exists',
+        //required: 'Please enter a username',
         trim: true
     },
     password: {
         type: String,
         default: '',
-        validate: [validateLocalStrategyPassword, 'Password should be at least 6 characters']
+        //validate: [validateLocalStrategyPassword, 'Password should be at least 6 characters']
     },
 });
 
