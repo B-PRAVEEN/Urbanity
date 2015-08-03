@@ -1,5 +1,6 @@
 angular.module('urbanity', ['ngAnimate','ui.router', 'ui.bootstrap'])
 .config(function($stateProvider, $urlRouterProvider){
+
   $urlRouterProvider.otherwise('/messaging');
     $stateProvider   
         .state('landing', {
