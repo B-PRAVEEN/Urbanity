@@ -98,9 +98,3 @@ userSchema.methods.verifyPassword = function(password) {
 module.exports = mongoose.model('User', userSchema);
 
 
-
-
-
-
-
-

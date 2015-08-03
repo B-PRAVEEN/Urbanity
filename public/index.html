@@ -11,19 +11,34 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
-    <ng-view></ng-view>
+    <a ui-sref="main.home">Urbanity</a>
+
+    <div ui-view></div>
+
+
     <!-- ANGULAR -->
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-animate/angular-animate.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="main/mainCtrl.js"></script>
-    <script type="text/javascript" src="main/mainService.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="home/homeCtrl.js"></script>
+    <script type="text/javascript" src="home/homeService.js"></script>
+    
+    <script type="text/javascript" src="auth/modalDirective.js"></script>
+    <script type="text/javascript" src="landing/landingService.js"></script>
+    <script type="text/javascript" src="landing/landingCtrl.js"></script>
+     <script type="text/javascript" src="message/messageCtrl.js"></script>
+    <script type="text/javascript" src="message/messageService.js"></script>
+
+
 </body>
 
 </html>
