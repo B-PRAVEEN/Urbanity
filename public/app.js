@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+'use strict';
+
+
+var app = angular.module('app', [
+    'ngAnimate',
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ngTouch',
+    'ngStorage',
+    'ui.router',
+    'ui.bootstrap',
+    'ui.utils',
+    'ui.load',
+    'ui.jq',
+    'oc.lazyLoad',
+    'pascalprecht.translate'
+]);
+=======
 angular.module('urbanity', ['ngAnimate','ui.router', 'ui.bootstrap'])
 .config(function($stateProvider, $urlRouterProvider){
 
@@ -52,3 +72,4 @@ angular.module('urbanity', ['ngAnimate','ui.router', 'ui.bootstrap'])
   
 });
 
+>>>>>>> 149a56b6beb0a392ad38c8189a1416427fed677b

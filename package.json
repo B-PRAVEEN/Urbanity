@@ -9,11 +9,27 @@
   },
   "repository": {
     "type": "git",
+<<<<<<< HEAD
+    "url": "git+https://github.com/Aluma/Urbanity"
+=======
     "url": "git+https://github.com/OluchiO/Urbanity.git"
+>>>>>>> 149a56b6beb0a392ad38c8189a1416427fed677b
   },
   "author": "",
   "license": "ISC",
   "bugs": {
+<<<<<<< HEAD
+    "url": "https://github.com/Aluma/Urbanity/issues"
+  },
+  "homepage": "https://github.com/Aluma/Urbanity#readme",
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.1",
+    "mongoose": "^4.1.0"
+  }
+}
+=======
     "url": "https://github.com/OluchiO/Urbanity/issues"
   },
   "homepage": "https://github.com/OluchiO/Urbanity#readme",
@@ -31,3 +47,4 @@
     "passport-twitter": "^1.0.3"
   }
 }
+>>>>>>> 149a56b6beb0a392ad38c8189a1416427fed677b

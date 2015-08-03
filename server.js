@@ -1,5 +1,6 @@
 var express = require('express');
-var session = require('express-session')
+
+var session = require('express-session');
 var passport = require('passport');
 var cors = require('cors');
 var cookieParser = require('cookie-parser');
@@ -11,7 +12,7 @@ var port = 3000;
 var app = express();
 app.use(express.static(__dirname + '/public'));
 
-var app2 = express().createServer
+var app2 = express().createServer;
 var io = require('socket.io').listen(app2);
 
 var env = require('./env.js');
@@ -394,7 +395,7 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
  console.log('Mongoose connected to your soul on:', mongooseUri);
-})
+});
 
 io.on('connection', function (socket) {
   socket.emit('news', { hello: 'world' });
