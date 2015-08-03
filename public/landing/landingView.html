@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<!--<![endif]-->
+<html lang="en" class="no-js" data-ng-app='app'>
+<head>
+    <meta charset="utf-8">
+    <title>Urbanity: Social Network for Travelers & Expatriates</title>
+    <meta name="Urbanity" content="Social Network for Expatriates, Travelers and Tourists">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="../../public/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../public/assets/css/flexslider.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../public/assets/css/line-icons.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../public/assets/css/elegant-icons.min.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../../public/assets/css/lightbox.min.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../../public/assets/css/theme-aquatica.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../public/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+    <!--[if gte IE 9]>
+    <link rel="stylesheet" type="text/css" href="../../public/assets/css/ie9.css" />
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700' rel='stylesheet' type='text/css' />
+    <script src="../../public/assets/js/modernizr.custom.93575.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="../../public/assets/css/font-helvetica.css" rel="stylesheet" type="text/css">
+</head>
+
+<body ng-controller="landingCtrl">
+
+<nav class="top-bar overlay-bar">
+    <div class="container">
+        <div class="row utility-menu">
+            <div class="col-sm-12">
+                <div class="utility-inner clearfix">
+                        <ul class="social-icons text-left">
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_twitter"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_facebook"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="icon social_googleplus"></i>
+                                </a>
+                            </li>
+                        </ul>
+                            <div class="pull-right loginModal" ng-show="showModal">
+                                <modal title="Login form" visible="showModal">
+                                    <form data-ng-submit="signin()" class="form-login landingLogin" autocomplete="off">
+                                        <div class="form-group">
+                                            <label for="email">Email Address</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Email Address" />
+                                            <br>
+                                            <label for="password">Password</label>
+                                                <input type="password" class="form-control" id="password" placeholder="Password" />
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Submit</button>
+                                    </form>
+                                </modal>
+                            </div>
+                        <div class="pull-right">
+                                <button ng-click="toggleModal()" class="btn btn-primary login-button btn-xs">Login</button>
+                                <button ng-click="toggleModal()"  class="btn btn-primary btn-filled btn-xs">Signup</button>
+                        </div>
+                </div>
+                    <!--<a href="#" class="language"><img alt="English" src="img/english.png"></a>-->
+                    <!--<a href="#" class="language"><img alt="English" src="img/denmark.png"></a>-->
+                </div>
+            </div>
+            <span class="alt-font"><i class="icon icon_mail"></i> hello@urbanityapp.com</span>
+        </div>
+    </div><!--end of row-->
+</nav><!--end of container-->
+
+<div class="main-container">
+    <section class="hero-slider">
+        <ul class="slides">
+            <li class="overlay hover-background">
+
+                <div class="background-image-holder">
+                    <img class="background-image" alt="Background Image" src="../../public/assets/img/layer1.jpg">
+                </div>
+
+                <div class="foreground-image-holder layer-1">
+                    <img class="background-image" alt="Background Image" src="../../public/assets/img/layer2.png">
+                </div>
+
+                <div class="foreground-image-holder layer-2">
+                    <img class="background-image" alt="Background Image" src="../../public/assets/img/layer3.png">
+                </div>
+
+                <div class="container align-vertical">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-9">
+                            <h1 class="text-white">Urbanity: <br>A hub for Expatriates &amp; Travelers.&nbsp;</h1>
+                            <a target="_blank" href="#" class="btn btn-primary btn-white">Learn More</a>
+                            <a href="#" class="btn btn-primary btn-filled">Free Sign-Up</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="overlay">
+                <div class="background-image-holder parallax-background">
+                    <img class="background-image" alt="Background Image" src="../../public/assets/img/red_umbrella.jpeg">
+                </div>
+
+                <div class="container align-vertical">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-9">
+                            <h1 class="text-white">We help people feel at home in their new surroundings.</h1>
+                            <a target="_blank" href="#" class="btn btn-primary btn-white">Learn more</a>
+                            <a href="#" class="btn btn-primary btn-filled">Free Sign-Up</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="image-divider overlay duplicatable-content">
+        <div class="background-image-holder parallax-background">
+            <img class="background-img" alt="Background Image" src="../../public/assets/img/blur-background08.jpg">
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text-center">
+                    <span class="text-white alt-font">What we offer</span>
+                    <h1 class="text-white">A Real Connection with Real People</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="feature feature-icon-large">
+                        <i class="text-white icon icon-notebook"></i>
+                        <h5 class="text-white">A Social Network for Migrant Workers</h5>
+                        <p class="text-white">Moving and adjusting to a new home is difficult. Our goal is to make it easier for you! Different places have vastly different ways of life. Wouldn't it be great if you already had friends where you are planning to move? We are here to make that possible!&nbsp;</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="feature feature-icon-large">
+                        <i class="text-white icon icon-genius"></i>
+                        <h5 class="text-white">A Social Network for Travelers</h5>
+                        <p class="text-white">Traveling is one of the best joys of life! It becomes even more exciting in the company of friends. We live in an increasingly connected world, yet our world is more complex than ever. We want you to travel with the peace and comfort of knowing that a friend is nearby, when needed.&nbsp;</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="feature feature-icon-large">
+                        <i class="text-white icon icon-gift"></i>
+                        <h5 class="text-white">A Social Network for 'Global Locals'</h5>
+                        <p class="text-white">Planet Earth is one big family. The internet is great (we love it!), but it does not replace "insider" tips and advice from well-informed locals. We cordially invite you to join us as a "Global Local' who helps expatriates, migrant workers, tourists, and travelers become familiar with their new surroundings!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <header class="signup">
+        <div class="background-image-holder parallax-background">
+            <img class="background-image" alt="Background Image" src="../../public/assets/img/blur-background09.jpg">
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 col-sm-12 text-center">
+                    <h1 class="text-white">Reduce uncertainty on your next journey.</h1>
+                </div>
+            </div>
+
+            <div class="row text-center">
+
+                <div class="col-sm-12 text-center">
+                    <div class="photo-form-wrapper clearfix">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-4">
+                                <input class="form-email" type="text" placeholder="Email Address">
+                            </div>
+
+                            <div class="col-md-3 col-sm-4">
+                                <input class="form-password" type="password" placeholder="Password">
+                            </div>
+
+                            <div class="col-md-3 col-sm-4">
+                                <input class="form-password2" type="password" placeholder="Confirm Password">
+                            </div>
+
+                            <div class="col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-4 text-center">
+                                <input type="submit" class="btn btn-primary btn-filled" value="Free Sign-Up">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <span class="text-white">We value your trust and privacy. Your information is never sold to third parties.</span>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+    <section class="social-bar no-pad">
+        <div class="col-md-3 col-sm-6 no-pad">
+            <a href="#">
+                <div class="link bg-twitter">
+                    <div class="initial">
+                        <i class="icon social_twitter"></i>
+                    </div>
+
+                    <div class="hover-state">
+                        <span class="text-white">Follow On Twitter</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 no-pad">
+            <a href="#">
+                <div class="link bg-facebook">
+                    <div class="initial">
+                        <i class="icon social_facebook"></i>
+                    </div>
+
+                    <div class="hover-state">
+                        <span class="text-white">Friends on Facebook</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 no-pad">
+            <a href="#">
+                <div class="link bg-linkedin">
+                    <div class="initial">
+                        <i class="icon social_linkedin"></i>
+                    </div>
+                    <div class="hover-state">
+                        <span class="text-white">Link up on LinkedIn</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 no-pad">
+            <a href="#">
+                <div class="link bg-googleplus">
+                    <div class="initial">
+                        <i class="icon social_googleplus"></i>
+                    </div>
+
+                    <div class="hover-state">
+                        <span class="text-white">Thoughts on Google+</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+</div>
+
+<div class="footer-container">
+</div>
+
+
+
+
+<!-- ANGULAR -->
+<script type="text/javascript" src="../app.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="../../public/assets/js/jquery.min.js"></script>
+<script src="../../public/assets/js/jquery.plugin.min.js"></script>
+<script src="../../public/assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="../../public/assets/js/jquery.flexslider-min.js"></script>
+<script src="../../public/assets/js/smooth-scroll.min.js"></script>
+<script src="../../public/assets/js/skrollr.min.js"></script>
+<script src="../../public/assets/js/spectragram.min.js"></script>
+<script src="../../public/assets/js/scrollReveal.min.js"></script>
+<script src="../../public/assets/js/isotope.min.js"></script>
+<script src="../../public/assets/js/twitterFetcher_v10_min.js"></script>
+<script src="../../public/assets/js/lightbox.min.js"></script>
+<script src="../../public/assets/js/jquery.countdown.min.js"></script>
+<script src="../../public/assets/js/scripts.js"></script>
+
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+<script src="../../public/assets/js/services/ui-load.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="../bower_components/angular-resource/angular-resource.js"></script>
+<script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="../bower_components/angular-ui-utils/index.js"></script>
+<script src="../bower_components/angular-scroll/angular-scroll.js"></script>
+<script src="../bower_components/angular-ui-scroll/dist/ui-scroll.js"></script>
+<script src="../bower_components/angular-ui-scrollpoint/dist/scrollpoint.js"></script>
+<script src="../bower_components/angular-ui-event/dist/event.js"></script>
+<script src="../bower_components/angular-ui-mask/dist/mask.js"></script>
+<script src="../bower_components/angular-ui-select/dist/select.js"></script>
+<script src="../bower_components/angular-ui-switch/angular-ui-switch.js"></script>
+<script src="../bower_components/angular-ui-uploader/dist/uploader.js"></script>
+<script src="../bower_components/angular-ui-validate/dist/validate.js"></script>
+<script src="../bower_components/angular-ui-indeterminate/dist/indeterminate.js"></script>
+
+
+<script src="../bower_components/angular-touch/angular-touch.js"></script>
+<script src="../bower_components/angular-translate/angular-translate.js"></script>
+<script src="../bower_components/ngstorage/ngStorage.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="../../public/assets/js/directives/ui-jq.js"></script>
+<script src="../bower_components/angular-translate/angular-translate.js"></script>
+<script type="text/javascript" src="../../public/landing/landingCtrl.js"></script>
+
+</body>
+</html>
+				
