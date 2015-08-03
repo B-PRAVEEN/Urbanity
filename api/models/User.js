@@ -107,11 +107,6 @@ var userSchema = new Schema({
     },*/
 
 
-var mongoose = require('mongoose');
-var bcrypt = require('bcrypt');
-var Schema = mongoose.Schema;
-var q = require('q');
-
 //pre('save') is mongoose middleware that runs before every user is created
 userSchema.pre('save', function(next) {
     var user = this;
