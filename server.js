@@ -7,10 +7,12 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var env = require('./env.js');
 var port = process.env.PORT || env.port;
+var bcrypt = require('bcrypt');
 
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
+var LocalStrategy = require('passport-local')
 
 // used for endpoint security, checks for valid passport authenticated user
 // example:
@@ -30,10 +32,6 @@ var isAuthed = function (req, res, next) {
 }
 
 
-
-
-
-
 passport.serializeUser(function(user, done) {
   //TODO serialize user id from database
   done(null, user);
@@ -44,22 +42,26 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj)
 })
 
+passport.use(new LocalStrategy({
+
+}))
+
 passport.use(new GoogleStrategy({
       clientID: env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.googleClientSecret || env.googleClientSecret,
+      clientSecret: process.env.googleClientSecret || env.GOOGLE_CLIENT_SECRET,
       callbackURL: process.env.googleCallbackURL || env.googleCallbackURL,
       passReqToCallback: true
   },
-  function(req, token, tokenSecret, profile, done){
+  function(req, accessToken, refreshToken, profile, done){
     // Successful authentication, create or update user.
     console.log('authenticated with google');
-    console.log(profile);
+    console.log(req.user);
     /*User.updateOrCreate(profile).then(function(results){
       //console.log(req.session);
       done(null, profile);
   }, function(err){
       done(err, profile);*/
-      done(null, profile);
+      return done(null, profile);
   })
 );
 
@@ -84,7 +86,7 @@ passport.use(new FacebookStrategy({
     clientSecret: env.FACEBOOK_APP_SECRET,
     callbackURL: env.facebookCallbackURL
   },
-  function(accessToken, refreshToken, profile, done) {
+  function(req, accessToken, refreshToken, profile, done) {
     // Successful authentication, create or update user.
       //console.log(profile);
       console.log('auth with facebook');
@@ -99,15 +101,12 @@ passport.use(new FacebookStrategy({
       });*/
       //console.log(req.session.passport.user);
       done(null, profile);
-  }, function(err){
-      done(err, profile);
   })
   );
 
 
 // Connections
 var app = express();
-app.use(express.static(__dirname + '/public'));
 
 //Middleware
 app.use(bodyParser.json());
@@ -123,10 +122,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(express.static(__dirname + '/public'));
 
 //TODO add authentication endpoints
 
-app.get('/auth/google', passport.authenticate('google', {scope: 'https://www.googleapis.com/auth/plus.login'}));
+app.get('/auth/google', passport.authenticate('google', {scope: 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.profile'}));
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }),
   function(req, res) {
 
@@ -138,6 +138,7 @@ app.get('/auth/google/callback', passport.authenticate('google', { failureRedire
     // return res.redirect('/#/welcome');
     // //res.status(200).json(req.user);
     console.log('logged in with google')
+    res.status(200).json(req.user);
   });
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
@@ -154,7 +155,8 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRe
     // //console.log(currentUser);
     // return res.redirect('/#/welcome');
     // //res.status(200).json(req.user);
-    console.log('logged in with facebook')
+    console.log('logged in with facebook');
+    res.status(200).json(req.user);
   });
 
 app.get('/auth/twitter', passport.authenticate('twitter'));
@@ -162,6 +164,7 @@ app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedi
   function(req, res) {
     // Successful authentication, redirect home.
     console.log('logged in with twitter')
+    res.status(200).json(req.user);
     // res.redirect('/');
   });
 
