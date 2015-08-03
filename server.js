@@ -7,12 +7,6 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var port = 3000;
 
-
-// used for endpoint security, checks for valid passport authenticated user
-// example:
-// app.get('/api/userProfile', isAuthed, function(){ ...(this will not fire if isAuthed fails) })
-
-
 // Connections
 var app = express();
 app.use(express.static(__dirname + '/public'));
@@ -23,8 +17,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 // API endpoints
-// here
-//
 /*
 app.get('/api/users', function(req, res) {
   
