@@ -1,26 +1,54 @@
 angular.module('urbanity', ['ngAnimate','ui.router', 'ui.bootstrap'])
 .config(function($stateProvider, $urlRouterProvider){
 
-    $urlRouterProvider.otherwise("/");
+  $urlRouterProvider.otherwise('/messaging');
+    $stateProvider   
+        .state('landing', {
+            url: '/landing',
+            templateUrl: '/landing/landingView.html',
+            controller: 'landingCtrl'
+        })  
+            .state('home', {
+            url: '/home',
+            templateUrl: '/home/homeView.html',
+            controller: 'homeCtrl',
+            resolve: { currentUser: function(authService) {
+              authService.getCurrentUser().then(function(user){
+                return user;
+              })
 
-    $stateProvider
-      .state('main.state1', {
-        url: '^/feed',
-        templateUrl: 'partials/state1.html'
-      })
-      .state('main.state2', {
-        url: '^/profile',
-        templateUrl: 'partials/state2.html'
-      })
-      .state('main', {
-        url: '^/',
-        abstract: true,
-        templateUrl: 'main/mainView.html',
-        controller: 'mainCtrl'
-      })
-      .state('main.home', {
-        url: '',
-        template: '<h1> This is the feed view </h1>'
-      })
+            }
 
-  });
+            }
+
+  })
+.state('profile', {
+            url: '/profile',
+            templateUrl: '/profile/profileView.html'
+            
+  })
+.state('settings', {
+            url: '/settings',
+            templateUrl: '/settingd/settingsView.html'
+  })
+  .state('search', {
+            url: '/search',
+            templateUrl: '/search/searchView.html'          
+
+  }).state('favorites', {
+            url: '/favorites',
+            templateUrl: '/favorites/favoritesView.html'
+
+  }).state('messaging', {
+            url: '/messaging',
+            templateUrl: '/message/messageView.html'
+      
+
+  }).state('tasks', {
+            url: '/tasks',
+            templateUrl: '/tasks/tasksView.html'
+
+  })
+  
+});
+

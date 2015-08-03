@@ -5,6 +5,10 @@ var cors = require('cors');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+
+var app2 = express().createServer
+var io = require('socket.io').listen(app2);
+
 var env = require('./env.js');
 var port = process.env.PORT || env.port;
 var bcrypt = require('bcrypt');
@@ -108,6 +112,7 @@ passport.use(new FacebookStrategy({
 // Connections
 var app = express();
 
+
 //Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -173,6 +178,7 @@ app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedi
 // here
 //
 
+
 var mongooseUri = 'mongodb://localhost/urbanity';
 mongoose.connect(mongooseUri);
 
@@ -181,6 +187,13 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
  console.log('Mongoose connected to your soul on:', mongooseUri);
 })
+
+io.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+});
 
 app.listen(port, function () {
   console.log('This is port:', port);
