@@ -5,6 +5,11 @@ var cors = require('cors');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var port = 3000;
+
+// Connections
+var app = express();
+app.use(express.static(__dirname + '/public'));
 
 var app2 = express().createServer
 var io = require('socket.io').listen(app2);
@@ -118,6 +123,216 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
+// API endpoints
+
+app.get('/api/models/user', function(req, res) {
+  
+});
+
+  app.get('/api/models/user/:name', function(req, res) {
+    
+  });
+
+  app.get('/api/models/user/:gender', function(req, res) {
+    
+  });
+
+  app.get('/api/models/user/:date_of_birth', function(req, res) {
+  
+  });
+
+  app.get('/api/models/user/:age', function(req, res) {
+    
+  });
+
+  app.get('/api/models/user/:address', function(req, res) {
+    
+  });
+
+  app.get('/api/models/user/:nationality', function(req, res) {
+    
+  });
+
+  app.get('/api/models/user/:languages', function(req, res) {
+  
+  });
+
+  app.get('/api/models/user/:interests', function(req, res) {
+  
+  });
+
+  app.get('/api/models/user/:special_needs', function(req, res) {
+  
+  });
+
+  app.get('/api/models/user/:email', function(req, res) {
+  
+  });
+
+  app.get('/api/models/user/:username', function(req, res) {
+  
+  });
+
+  app.get('/api/models/user/:password', function(req, res) {
+  
+  });
+
+app.post('/api/models/user', function(req, res) {
+  
+});
+
+  app.post('/api/models/user/:name', function(req, res) {
+    
+  });
+
+  app.post('/api/models/user/:gender', function(req, res) {
+    
+  });
+
+  app.post('/api/models/user/:date_of_birth', function(req, res) {
+  
+  });
+
+  app.post('/api/models/user/:age', function(req, res) {
+    
+  });
+
+  app.post('/api/models/user/:address', function(req, res) {
+    
+  });
+
+  app.post('/api/models/user/:nationality', function(req, res) {
+    
+  });
+
+  app.post('/api/models/user/:languages', function(req, res) {
+  
+  });
+
+  app.post('/api/models/user/:interests', function(req, res) {
+  
+  });
+
+  app.post('/api/models/user/:special_needs', function(req, res) {
+  
+  });
+
+  app.post('/api/models/user/:email', function(req, res) {
+  
+  });
+
+  app.post('/api/models/user/:username', function(req, res) {
+  
+
+  });
+
+  app.post('/api/models/user/:password', function(req, res) {
+  
+  });
+
+app.put('/api/models/user', function(req, res) {
+  
+  });
+    app.put('/api/models/user/:name', function(req, res) {
+    
+  });
+
+  app.put('/api/models/user/:gender', function(req, res) {
+    
+  });
+
+  app.put('/api/models/user/:date_of_birth', function(req, res) {
+  
+  });
+
+  app.put('/api/models/user/:age', function(req, res) {
+    
+  });
+
+  app.put('/api/models/user/:address', function(req, res) {
+    
+  });
+
+  app.put('/api/models/user/:nationality', function(req, res) {
+    
+  });
+
+  app.put('/api/models/user/:languages', function(req, res) {
+  
+  });
+
+  app.put('/api/models/user/:interests', function(req, res) {
+  
+  });
+
+  app.put('/api/models/user/:special_needs', function(req, res) {
+  
+  });
+
+  app.put('/api/models/user/:email', function(req, res) {
+  
+  });
+
+  app.put('/api/models/user/:username', function(req, res) {
+  
+  });
+
+  app.put('/api/models/user/:password', function(req, res) {
+  
+  });
+
+app.delete('/api/models/user', function(req, res) {
+  
+  });
+
+  app.delete('/api/models/user/:name', function(req, res) {
+    
+  });
+
+  app.delete('/api/models/user/:gender', function(req, res) {
+    
+  });
+
+  app.delete('/api/models/user/:date_of_birth', function(req, res) {
+  
+  });
+
+  app.delete('/api/models/user/:age', function(req, res) {
+    
+  });
+
+  app.delete('/api/models/user/:address', function(req, res) {
+    
+  });
+
+  app.delete('/api/models/user/:nationality', function(req, res) {
+    
+  });
+
+  app.delete('/api/models/user/:languages', function(req, res) {
+  
+  });
+
+  app.delete('/api/models/user/:interests', function(req, res) {
+  
+  });
+
+  app.delete('/api/models/user/:special_needs', function(req, res) {
+  
+  });
+
+  app.delete('/api/models/user/:email', function(req, res) {
+  
+  });
+
+  app.delete('/api/models/user/:username', function(req, res) {
+  
+  });
+
+  app.delete('/api/models/user/:password', function(req, res) {
+  
+  });
+
 //Session and Passport
 app.use(session({
   secret: process.env.SESSION_SECRET || env.session_secret,
@@ -171,13 +386,6 @@ app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedi
     console.log('logged in with twitter')
     res.status(200).json(req.user);
     // res.redirect('/');
-  });
-
-
-// API endpoints
-// here
-//
-
 
 var mongooseUri = 'mongodb://localhost/urbanity';
 mongoose.connect(mongooseUri);
