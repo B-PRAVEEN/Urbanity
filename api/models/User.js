@@ -70,43 +70,6 @@ var userSchema = new Schema({
     },
 });
 
-
-
-    /*salt: {
-        type: String
-    },
-    provider: {
-        type: String,
-        required: 'Provider is required'
-    },
-    providerData: {},
-    additionalProvidersData: {},
-    roles: {
-        type: [{
-            type: String,
-            enum: ['user', 'admin']
-        }],
-        default: ['user']
-    },
-    updated: {
-        type: Date
-    },
-    created: {
-        type: Date,
-        default: Date.now
-    },
-    isActive: {
-        type: Boolean,
-        default: true},
-    // For reset password 
-    resetPasswordToken: {
-        type: String
-    },
-    resetPasswordExpires: {
-        type: Date
-    },*/
-
-
 //pre('save') is mongoose middleware that runs before every user is created
 userSchema.pre('save', function(next) {
     var user = this;
