@@ -1,0 +1,42 @@
+.social-icons.text-left {
+    margin-top: 5px;
+    margin-left: 2px;
+}
+
+.loginModal {
+    position: fixed;
+    top: 50px;
+    right: 240px;
+    height: 200px;
+    width: 400px;
+    padding: 40px;
+    margin: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    /*background-color: #eee;*/
+    border-radius: 10px;
+}
+.form-control {
+    margin: 10px;
+}
+.landingLogin {
+    height: 20px;
+}
+.form-group {
+    margin: 20px;
+    width: inherit;
+    align-self: center;
+}
+.btn-default {
+    margin: inherit;
+    width: inherit;
+}
+
+.bg-linkedin {
+    background-color: #396598;
+}
+/*.aside-wrap {*/
+    /*box-sizing: border-box;*/
+/*}*/
+/*.aside-wrap {*/
+    /*vertical-align: middle;*/
+/*}*/
