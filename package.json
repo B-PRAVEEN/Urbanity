@@ -1,0 +1,26 @@
+{
+  "name": "urbanity",
+  "version": "1.0.0",
+  "description": "Social Network For Movers, Travelers, and Tourists.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aluma/Urbanity"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aluma/Urbanity/issues"
+  },
+  "homepage": "https://github.com/Aluma/Urbanity#readme",
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.1",
+    "mongoose": "^4.1.0"
+  }
+}
