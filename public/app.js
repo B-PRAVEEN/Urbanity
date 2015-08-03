@@ -1,16 +1,26 @@
 angular.module('urbanity', ['ngAnimate','ui.router', 'ui.bootstrap'])
 .config(function($stateProvider, $urlRouterProvider){
 
-    $urlRouterProvider.otherwise("/state1");
+    $urlRouterProvider.otherwise("/");
 
     $stateProvider
-      .state('state1', {
-        url: '/state1',
+      .state('main.state1', {
+        url: '^/feed',
         templateUrl: 'partials/state1.html'
       })
-      .state('state2', {
-        url: '/state2',
+      .state('main.state2', {
+        url: '^/profile',
         templateUrl: 'partials/state2.html'
+      })
+      .state('main', {
+        url: '^/',
+        abstract: true,
+        templateUrl: 'main/mainView.html',
+        controller: 'mainCtrl'
+      })
+      .state('main.home', {
+        url: '',
+        template: '<h1> This is the feed view </h1>'
       })
 
   });
