@@ -18,210 +18,210 @@ app.use(cors());
 
 // API endpoints
 /*
-app.get('/api/users', function(req, res) {
+app.get('/api/models/user', function(req, res) {
   
 });
 
-  app.get('/api/users/:name', function(req, res) {
+  app.get('/api/models/user/:name', function(req, res) {
     
   });
 
-  app.get('/api/users/:gender', function(req, res) {
+  app.get('/api/models/user/:gender', function(req, res) {
     
   });
 
-  app.get('/api/users/:date_of_birth', function(req, res) {
+  app.get('/api/models/user/:date_of_birth', function(req, res) {
   
   });
 
-  app.get('/api/users/:age', function(req, res) {
+  app.get('/api/models/user/:age', function(req, res) {
     
   });
 
-  app.get('/api/users/:address', function(req, res) {
+  app.get('/api/models/user/:address', function(req, res) {
     
   });
 
-  app.get('/api/users/:nationality', function(req, res) {
+  app.get('/api/models/user/:nationality', function(req, res) {
     
   });
 
-  app.get('/api/users/:languages', function(req, res) {
+  app.get('/api/models/user/:languages', function(req, res) {
   
   });
 
-  app.get('/api/users/:interests', function(req, res) {
+  app.get('/api/models/user/:interests', function(req, res) {
   
   });
 
-  app.get('/api/users/:special_needs', function(req, res) {
+  app.get('/api/models/user/:special_needs', function(req, res) {
   
   });
 
-  app.get('/api/users/:email', function(req, res) {
+  app.get('/api/models/user/:email', function(req, res) {
   
   });
 
-  app.get('/api/users/:username', function(req, res) {
+  app.get('/api/models/user/:username', function(req, res) {
   
   });
 
-  app.get('/api/users/:password', function(req, res) {
+  app.get('/api/models/user/:password', function(req, res) {
   
   });
 
-app.post('/api/users', function(req, res) {
+app.post('/api/models/user', function(req, res) {
   
 });
 
-  app.post('/api/users/:name', function(req, res) {
+  app.post('/api/models/user/:name', function(req, res) {
     
   });
 
-  app.post('/api/users/:gender', function(req, res) {
+  app.post('/api/models/user/:gender', function(req, res) {
     
   });
 
-  app.post('/api/users/:date_of_birth', function(req, res) {
+  app.post('/api/models/user/:date_of_birth', function(req, res) {
   
   });
 
-  app.post('/api/users/:age', function(req, res) {
+  app.post('/api/models/user/:age', function(req, res) {
     
   });
 
-  app.post('/api/users/:address', function(req, res) {
+  app.post('/api/models/user/:address', function(req, res) {
     
   });
 
-  app.post('/api/users/:nationality', function(req, res) {
+  app.post('/api/models/user/:nationality', function(req, res) {
     
   });
 
-  app.post('/api/users/:languages', function(req, res) {
+  app.post('/api/models/user/:languages', function(req, res) {
   
   });
 
-  app.post('/api/users/:interests', function(req, res) {
+  app.post('/api/models/user/:interests', function(req, res) {
   
   });
 
-  app.post('/api/users/:special_needs', function(req, res) {
+  app.post('/api/models/user/:special_needs', function(req, res) {
   
   });
 
-  app.post('/api/users/:email', function(req, res) {
+  app.post('/api/models/user/:email', function(req, res) {
   
   });
 
-  app.post('/api/users/:username', function(req, res) {
+  app.post('/api/models/user/:username', function(req, res) {
   
   });
 
-  app.post('/api/users/:password', function(req, res) {
+  app.post('/api/models/user/:password', function(req, res) {
   
   });
 
-app.put('/api/users', function(req, res) {
+app.put('/api/models/user', function(req, res) {
   
   });
-    app.put('/api/users/:name', function(req, res) {
+    app.put('/api/models/user/:name', function(req, res) {
     
   });
 
-  app.put('/api/users/:gender', function(req, res) {
+  app.put('/api/models/user/:gender', function(req, res) {
     
   });
 
-  app.put('/api/users/:date_of_birth', function(req, res) {
+  app.put('/api/models/user/:date_of_birth', function(req, res) {
   
   });
 
-  app.put('/api/users/:age', function(req, res) {
+  app.put('/api/models/user/:age', function(req, res) {
     
   });
 
-  app.put('/api/users/:address', function(req, res) {
+  app.put('/api/models/user/:address', function(req, res) {
     
   });
 
-  app.put('/api/users/:nationality', function(req, res) {
+  app.put('/api/models/user/:nationality', function(req, res) {
     
   });
 
-  app.put('/api/users/:languages', function(req, res) {
+  app.put('/api/models/user/:languages', function(req, res) {
   
   });
 
-  app.put('/api/users/:interests', function(req, res) {
+  app.put('/api/models/user/:interests', function(req, res) {
   
   });
 
-  app.put('/api/users/:special_needs', function(req, res) {
+  app.put('/api/models/user/:special_needs', function(req, res) {
   
   });
 
-  app.put('/api/users/:email', function(req, res) {
+  app.put('/api/models/user/:email', function(req, res) {
   
   });
 
-  app.put('/api/users/:username', function(req, res) {
+  app.put('/api/models/user/:username', function(req, res) {
   
   });
 
-  app.put('/api/users/:password', function(req, res) {
+  app.put('/api/models/user/:password', function(req, res) {
   
   });
 
-app.delete('/api/users', function(req, res) {
+app.delete('/api/models/user', function(req, res) {
   
   });
 
-  app.delete('/api/users/:name', function(req, res) {
+  app.delete('/api/models/user/:name', function(req, res) {
     
   });
 
-  app.delete('/api/users/:gender', function(req, res) {
+  app.delete('/api/models/user/:gender', function(req, res) {
     
   });
 
-  app.delete('/api/users/:date_of_birth', function(req, res) {
+  app.delete('/api/models/user/:date_of_birth', function(req, res) {
   
   });
 
-  app.delete('/api/users/:age', function(req, res) {
+  app.delete('/api/models/user/:age', function(req, res) {
     
   });
 
-  app.delete('/api/users/:address', function(req, res) {
+  app.delete('/api/models/user/:address', function(req, res) {
     
   });
 
-  app.delete('/api/users/:nationality', function(req, res) {
+  app.delete('/api/models/user/:nationality', function(req, res) {
     
   });
 
-  app.delete('/api/users/:languages', function(req, res) {
+  app.delete('/api/models/user/:languages', function(req, res) {
   
   });
 
-  app.delete('/api/users/:interests', function(req, res) {
+  app.delete('/api/models/user/:interests', function(req, res) {
   
   });
 
-  app.delete('/api/users/:special_needs', function(req, res) {
+  app.delete('/api/models/user/:special_needs', function(req, res) {
   
   });
 
-  app.delete('/api/users/:email', function(req, res) {
+  app.delete('/api/models/user/:email', function(req, res) {
   
   });
 
-  app.delete('/api/users/:username', function(req, res) {
+  app.delete('/api/models/user/:username', function(req, res) {
   
   });
 
-  app.delete('/api/users/:password', function(req, res) {
+  app.delete('/api/models/user/:password', function(req, res) {
   
   });
 
