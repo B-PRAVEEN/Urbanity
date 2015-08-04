@@ -45673,7 +45673,7 @@ angular.module('app')
       // config
       $scope.app = {
         name: 'Urbanity',
-        version: '2.0.1',
+        version: '1.0.0',
         // for chart colors
         color: {
           primary: '#7266ba',
@@ -45696,7 +45696,7 @@ angular.module('app')
           asideDock: false,
           container: false
         }
-      }
+      };
 
       // save settings to local storage
       if ( angular.isDefined($localStorage.settings) ) {
