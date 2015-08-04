@@ -15,14 +15,14 @@ app.use(express.static(__dirname + '/public'));
 var app2 = express().createServer;
 var io = require('socket.io').listen(app2);
 
-var env = require('./env.js');
-var port = process.env.PORT || env.port;
+//var env = require('./env.js');
+//var port = process.env.PORT || env.port;
 var bcrypt = require('bcrypt');
 
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
-var LocalStrategy = require('passport-local')
+var LocalStrategy = require('passport-local');
 
 // used for endpoint security, checks for valid passport authenticated user
 // example:
@@ -39,7 +39,7 @@ var isAuthed = function (req, res, next) {
   }
   console.log('Not authenticated');
   res.status(401).end();
-}
+};
 
 
 passport.serializeUser(function(user, done) {
@@ -50,69 +50,69 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(obj, done) {
   //TODO query database with id
   done(null, obj)
-})
+});
 
-passport.use(new LocalStrategy({
-
-}))
-
-passport.use(new GoogleStrategy({
-      clientID: env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.googleClientSecret || env.GOOGLE_CLIENT_SECRET,
-      callbackURL: process.env.googleCallbackURL || env.googleCallbackURL,
-      passReqToCallback: true
-  },
-  function(req, accessToken, refreshToken, profile, done){
-    // Successful authentication, create or update user.
-    console.log('authenticated with google');
-    console.log(req.user);
-    /*User.updateOrCreate(profile).then(function(results){
-      //console.log(req.session);
-      done(null, profile);
-  }, function(err){
-      done(err, profile);*/
-      return done(null, profile);
-  })
-);
-
-passport.use(new TwitterStrategy({
-    consumerKey: process.env.CONSUMER_KEY || env.twitterConsumerKey,
-    consumerSecret: process.env.CONSUMER_SECRET || env.twitterConsumerSecret,
-    callbackURL: process.env.twitterCallbackURL || env.twitterCallbackURL
-  },
-  function(token, tokenSecret, profile, cb) {
-    console.log('auth with twitter');
-    console.log('profile');
-    // In this example, the user's Twitter profile is supplied as the user
-    // record.  In a production-quality application, the Twitter profile should
-    // be associated with a user record in the application's database, which
-    // allows for account linking and authentication with other identity
-    // providers.
-    return cb(null, profile);
-  }));
-
-passport.use(new FacebookStrategy({
-  clientID: env.FACEBOOK_APP_ID,
-    clientSecret: env.FACEBOOK_APP_SECRET,
-    callbackURL: env.facebookCallbackURL
-  },
-  function(req, accessToken, refreshToken, profile, done) {
-    // Successful authentication, create or update user.
-      //console.log(profile);
-      console.log('auth with facebook');
-      console.log(profile);
-/*    User.updateOrCreate(profile).then(function(results){
-
-        req.login(profile, function(err) {
-        if (err) {
-          return done(err, profile);
-        }
-        console.log('Should be logged in');
-      });*/
-      //console.log(req.session.passport.user);
-      done(null, profile);
-  })
-  );
+//passport.use(new LocalStrategy({
+//
+//}));
+//
+//passport.use(new GoogleStrategy({
+//      clientID: env.GOOGLE_CLIENT_ID,
+//      clientSecret: process.env.googleClientSecret || env.GOOGLE_CLIENT_SECRET,
+//      callbackURL: process.env.googleCallbackURL || env.googleCallbackURL,
+//      passReqToCallback: true
+//  },
+//  function(req, accessToken, refreshToken, profile, done){
+//    // Successful authentication, create or update user.
+//    console.log('authenticated with google');
+//    console.log(req.user);
+//    /*User.updateOrCreate(profile).then(function(results){
+//      //console.log(req.session);
+//      done(null, profile);
+//  }, function(err){
+//      done(err, profile);*/
+//      return done(null, profile);
+//  })
+//);
+//
+//passport.use(new TwitterStrategy({
+//    consumerKey: process.env.CONSUMER_KEY || env.twitterConsumerKey,
+//    consumerSecret: process.env.CONSUMER_SECRET || env.twitterConsumerSecret,
+//    callbackURL: process.env.twitterCallbackURL || env.twitterCallbackURL
+//  },
+//  function(token, tokenSecret, profile, cb) {
+//    console.log('auth with twitter');
+//    console.log('profile');
+//    // In this example, the user's Twitter profile is supplied as the user
+//    // record.  In a production-quality application, the Twitter profile should
+//    // be associated with a user record in the application's database, which
+//    // allows for account linking and authentication with other identity
+//    // providers.
+//    return cb(null, profile);
+//  }));
+//
+//passport.use(new FacebookStrategy({
+//  clientID: env.FACEBOOK_APP_ID,
+//    clientSecret: env.FACEBOOK_APP_SECRET,
+//    callbackURL: env.facebookCallbackURL
+//  },
+//  function(req, accessToken, refreshToken, profile, done) {
+//    // Successful authentication, create or update user.
+//      //console.log(profile);
+//      console.log('auth with facebook');
+//      console.log(profile);
+///*    User.updateOrCreate(profile).then(function(results){
+//
+//        req.login(profile, function(err) {
+//        if (err) {
+//          return done(err, profile);
+//        }
+//        console.log('Should be logged in');
+//      });*/
+//      //console.log(req.session.passport.user);
+//      done(null, profile);
+//  })
+//  );
 
 
 // Connections
@@ -282,7 +282,7 @@ app.put('/api/models/user', function(req, res) {
   
   });
 
-app.delete('/api/models/user', function(req, res) {
+  app.delete('/api/models/user', function(req, res) {
   
   });
 
@@ -335,11 +335,11 @@ app.delete('/api/models/user', function(req, res) {
   });
 
 //Session and Passport
-app.use(session({
-  secret: process.env.SESSION_SECRET || env.session_secret,
-  saveUninitialized: true,
-  resave: true
-}))
+//app.use(session({
+//  secret: process.env.SESSION_SECRET || env.session_secret,
+//  saveUninitialized: true,
+//  resave: true
+//}));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -358,7 +358,7 @@ app.get('/auth/google/callback', passport.authenticate('google', { failureRedire
     // //console.log(currentUser);
     // return res.redirect('/#/welcome');
     // //res.status(200).json(req.user);
-    console.log('logged in with google')
+    console.log('logged in with google');
     res.status(200).json(req.user);
   });
 
@@ -384,7 +384,7 @@ app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    console.log('logged in with twitter')
+    console.log('logged in with twitter');
     res.status(200).json(req.user);
     // res.redirect('/');
 
@@ -406,4 +406,4 @@ io.on('connection', function (socket) {
 
 app.listen(port, function () {
   console.log('This is port:', port);
-})
+})});
