@@ -16176,7 +16176,7 @@ var app = angular.module("app").config(["$controllerProvider", "$compileProvider
 ]).config(["$translateProvider",
     function(a) {
         a.useStaticFilesLoader({
-            prefix: "l10n/",
+            prefix: "assets/l10n/",
             suffix: ".js"
         }), a.preferredLanguage("en"), a.useLocalStorage()
     }
