@@ -1,4 +1,4 @@
-angular.module('urbanity')
+angular.module('app')
 .factory('messagingService', function ($rootScope) {
   var socket = io.connect();
   return {
