@@ -7,29 +7,24 @@ angular.module('app')
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
         }])
-    .config(['$stateProvider', '$urlRouterProvider',
-        function($stateProvider, $urlRouterProvider) {
+    .config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
+        function($stateProvider, $urlRouterProvider, JQ_CONFIG) {
             $urlRouterProvider
-                .otherwise('landing/landingView.html');
+                .otherwise('/');
             $stateProvider.
                 state('app', {
                 abstract: true,
                 url: '/app',
-                templateUrl: 'index.html'
+                templateUrl: 'app.html'
                 }).
-                state('app.home', {
-                    url: '/home',
-                    templateUrl: 'home/homeView.html',
-                    controller: 'homeCtrl'
+                state('app.page', {
+                    url: '/page',
+                    template: '<div ui-view class="fade-in-down"></div>'
+
                 }).
-                state('app.nav', {
-                    url: '/nav',
-                    templateUrl: 'partials/aside.html',
-                    controller: ''
-                }).
-                state('nav.profileView', {
-                    url: '/profileView',
-                    templateUrl: 'views/profile/profileView.html'
+                state('app.page.profile', {
+                    url: '/profile',
+                    templateUrl: 'userProfile/profileView.html'
                 }).
                 state('nav.profilePost', {
                     url: '/post',
