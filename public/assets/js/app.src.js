@@ -21041,7 +21041,7 @@ var ngCloakDirective = ngDirective({
  *      .controller('SettingsController1', SettingsController1);
  *
  *    function SettingsController1() {
- *      this.name = "John Smith";
+ *      this.name = "Jimmy Thanki";
  *      this.contacts = [
  *        {type: 'phone', value: '408 555 1212'},
  *        {type: 'email', value: 'Jimmy.Thanki@urbanityapp.com'} ];
@@ -21069,7 +21069,7 @@ var ngCloakDirective = ngDirective({
  *     it('should check controller as', function() {
  *       var container = element(by.id('ctrl-as-exmpl'));
  *         expect(container.element(by.model('settings.name'))
- *           .getAttribute('value')).toBe('John Smith');
+ *           .getAttribute('value')).toBe('Jimmy Thanki');
  *
  *       var firstRepeat =
  *           container.element(by.repeater('contact in settings.contacts').row(0));
@@ -21124,7 +21124,7 @@ var ngCloakDirective = ngDirective({
  *     .controller('SettingsController2', ['$scope', SettingsController2]);
  *
  *   function SettingsController2($scope) {
- *     $scope.name = "John Smith";
+ *     $scope.name = "Jimmy Thanki";
  *     $scope.contacts = [
  *       {type:'phone', value:'408 555 1212'},
  *       {type:'email', value:'Jimmy.Thanki@urbanityapp.com'} ];
@@ -21153,7 +21153,7 @@ var ngCloakDirective = ngDirective({
  *      var container = element(by.id('ctrl-exmpl'));
  *
  *      expect(container.element(by.model('name'))
- *          .getAttribute('value')).toBe('John Smith');
+ *          .getAttribute('value')).toBe('Jimmy Thanki');
  *
  *      var firstRepeat =
  *          container.element(by.repeater('contact in contacts').row(0));
@@ -44904,6 +44904,16 @@ angular.module('app')
           debug:  true,
           events: true,
           modules: [
+              {
+                  name: 'pascalprecht.translate',
+                  files: [
+                      '../../public/bower_components/angular-translate/angular-translate.min.js',
+                      '../../public/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
+                      '../../public/bower_components/angular-translate-loader-url/angular-translate-loader-url.min.js',
+                      '../../public/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js',
+                      '../../public/bower_components/angular-translate-storage-local/angular-translate-storage-local.min.js'
+                  ]
+              },
               {
                   name: 'ngGrid',
                   files: [
