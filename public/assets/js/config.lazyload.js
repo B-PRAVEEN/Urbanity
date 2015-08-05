@@ -2,7 +2,7 @@
 
 angular.module('app')
     /**
-   * jQuery plugin config use ui-jq directive , config the js and css files that required
+   * jQuery plugin config use ui-jq directive , config the js and css files that are required
    * key: function name of the jQuery plugin
    * value: array of the css js file located
    */
@@ -58,6 +58,16 @@ angular.module('app')
           debug:  true,
           events: true,
           modules: [
+              {
+                  name: 'pascalprecht.translate',
+                  files: [
+                      '../../public/bower_components/angular-translate/angular-translate.min.js',
+                      '../../public/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
+                      '../../public/bower_components/angular-translate-loader-url/angular-translate-loader-url.min.js',
+                      '../../public/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js',
+                      '../../public/bower_components/angular-translate-storage-local/angular-translate-storage-local.min.js'
+                  ]
+              },
               {
                   name: 'ngGrid',
                   files: [
