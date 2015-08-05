@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en" data-ng-app="app">
 
 <head>
@@ -13,8 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Urbanity: Social Network for Travelers & Expatriates</title>
-
-    <link rel="stylesheet" href="/assets/css/app.min.css" type="text/css" />
+    <script src="assets/js/modernizr.custom.93575.js"></script>
+    <link rel="stylesheet" href="assets/css/app.min.css" type="text/css" />
 </head>
 
 <body ng-controller="AppCtrl">
@@ -28,141 +27,76 @@
 
 
 <!-- Scripts -->
-<!--<script src="/assets/js/app.min.js"></script>-->
-<script src="/config/client.routes.js"></script>
-<script src="/config/config.js"></script>
-<script src="/assets/js/services/ui-load.js"></script>
-<script src="/assets/js/config.lazyload.js"></script>
-<script src="/assets/js/isotope.min.js"></script>
-<script src="/assets/js/jquery.countdown.min.js"></script>
-<script src="/assets/js/jquery.flexslider-min.js"></script>
-<script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/jquery.plugin.min.js"></script>
-<script src="/assets/js/lightbox.min.js"></script>
-<script src="/assets/js/modernizr.custom.93575.js"></script>
-<script src="/assets/js/scripts.js"></script>
-<script src="/assets/js/scrollReveal.js"></script>
-<script src="/assets/js/skrollr.min.js"></script>
-<script src="/assets/js/smooth-scroll.js"></script>
-<script src="/assets/js/spectragram.js"></script>
-<script src="/assets/js/templates.js"></script>
-<script src="/assets/js/twitterFetcher_v10_min.js"></script>
-<script src="/assets/js/ui-bootstrap.js"></script>
-<script src="/assets/js/ui-jp.config.js"></script>
-<script src="/assets/js/ui-jp.js"></script>
-<script src="/assets/js/ui-nav.js"></script>
-<script src="/assets/js/ui-toggle.js"></script>
+
+    <!--jQuery-->
+<!-- <script src="assets/js/app.min.js"></script> -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.plugin.min.js"></script>
+<script src="assets/js/jquery.flexslider-min.js"></script>
+<script src="assets/js/jquery.countdown.min.js"></script>
+<script src="assets/js/isotope.min.js"></script>
+<script src="assets/js/lightbox.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script src="assets/js/scrollReveal.js"></script>
+<script src="assets/js/skrollr.min.js"></script>
+<script src="assets/js/smooth-scroll.js"></script>
+<script src="assets/js/spectragram.js"></script>
+<script src="assets/js/templates.js"></script>
+<script src="assets/js/twitterFetcher_v10_min.js"></script>
+<script src="assets/js/ui-nav.js"></script>
+<script src="assets/js/ui-toggle.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+
+<!--<script src="assets/js/ui-jp.config.js"></script>-->
+<!--<script src="assets/js/ui-jp.js"></script>-->
+
+    <!--Angular-->
 
 <script src="bower_components/angular/angular.js"></script>
+<script src="app.js"></script>
+<script src="assets/js/controllers/bootstrap.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="main.js"></script>
+<script src="config/config.js"></script>
+<script src="config/client.routes.js"></script>
+<script src="assets/js/config.lazyload.js"></script>
+<script src="bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+<script src="assets/js/services/ui-load.js"></script>
+<script src="assets/js/directives/ui-jq.js"></script>
+<script src="assets/js/ui-jp.config.js"></script>
+<script src="assets/js/ui-jp.js"></script>
 <script src="bower_components/angular-animate/angular-animate.js"></script>
-<script src="bower_components/angular-aside"></script>
-<script src="bower_components/angular-bootstrap"></script>
-<script src="bower_components/angular-bootstrap-calendar"></script>
-<script src="bower_components/angular-bootstrap-nav-tree"></script>
-<script src="bower_components/angular-breadcrumb"></script>
-<script src="bower_components/angular-ckeditor"></script>
-<script src="bower_components/angular-cookies"></script>
-<script src="bower_components/angular-elastic"></script>
-<script src="bower_components/angular-file-upload"></script>
-<script src="bower_components/angular-ladda"></script>
-<script src="bower_components/angular-loading-bar"></script>
-<script src="bower_components/angular-moment"></script>
-<script src="bower_components/angular-resource"></script>
-<script src="bower_components/angular-sanitize"></script>
-<script src="bower_components/angular-scroll"></script>
-<script src="bower_components/angular-smart-table"></script>
-<script src="bower_components/angular-sweetalert-promised"></script>
-<script src="bower_components/angular-touch"></script>
-<script src="bower_components/angular-translate"></script>
-<script src="bower_components/angular-translate-loader-static-files"></script>
-<script src="bower_components/angular-translate-loader-url"></script>
-<script src="bower_components/angular-translate-storage-cookie"></script>
-<script src="bower_components/angular-translate-storage-local"></script>
-<script src="bower_components/angular-truncate"></script>
-<script src="bower_components/angular-ui-calendar"></script>
-<script src="bower_components/angular-ui-event"></script>
-<script src="bower_components/angular-ui-grid"></script>
-<script src="bower_components/angular-ui-indeterminate"></script>
-<script src="bower_components/angular-ui-mask"></script>
-<script src="bower_components/angular-ui-router"></script>
-<script src="bower_components/angular-ui-scroll"></script>
-<script src="bower_components/angular-ui-scrollpoint"></script>
-<script src="bower_components/angular-ui-select"></script>
-<script src="bower_components/angular-ui-switch"></script>
-<script src="bower_components/angular-ui-uploader"></script>
-<script src="bower_components/angular-ui-utils"></script>
-<script src="bower_components/angular-ui-validate"></script>
-<script src="bower_components/angular-xeditable"></script>
-<script src="bower_components/angularjs-toaster"></script>
-<script src="bower_components/animate.css"></script>
-<script src="bower_components/bootstrap"></script>
-<script src="bower_components/bootstrap-chosen"></script>
-<script src="bower_components/bootstrap-daterangepicker"></script>
-<script src="bower_components/bootstrap-filestyle"></script>
-<script src="bower_components/bootstrap-slider"></script>
-<script src="bower_components/bootstrap-tagsinput"></script>
-<script src="bower_components/bootstrap-touchspin"></script>
-<script src="bower_components/bootstrap-wysiwyg"></script>
-<script src="bower_components/bower-jvectormap"></script>
-<script src="bower_components/Chart.js"></script>
-<script src="bower_components/chartjs"></script>
-<script src="bower_components/checklist-model"></script>
-<script src="bower_components/chosen"></script>
-<script src="bower_components/ckeditor"></script>
-<script src="bower_components/components-modernizr"></script>
-<script src="bower_components/datatables"></script>
-<script src="bower_components/es5-shim"></script>
-<script src="bower_components/fastclick"></script>
-<script src="bower_components/flot"></script>
-<script src="bower_components/flot.orderbars"></script>
-<script src="bower_components/flot.tooltip"></script>
-<script src="bower_components/flow.js"></script>
-<script src="bower_components/font-awesome"></script>
-<script src="bower_components/footable"></script>
-<script src="bower_components/fullcalendar"></script>
-<script src="bower_components/html5sortable"></script>
-<script src="bower_components/jquery"></script>
-<script src="bower_components/jquery.easy-pie-chart"></script>
-<script src="bower_components/jquery.sparkline"></script>
-<script src="bower_components/jquery.sparkline.build"></script>
-<script src="bower_components/jquery-nestable"></script>
-<script src="bower_components/jquery_appear"></script>
-<script src="bower_components/ladda"></script>
-<script src="bower_components/microplugin"></script>
-<script src="bower_components/moment"></script>
-<script src="bower_components/nestable"></script>
-<script src="bower_components/ng-flow"></script>
-<script src="bower_components/ng-grid"></script>
-<script src="bower_components/ng-nestable"></script>
-<script src="bower_components/ng-table"></script>
-<script src="bower_components/ngImgCrop"></script>
-<script src="bower_components/ngmap"></script>
-<script src="bower_components/ngstorage"></script>
-<script src="bower_components/oclazyload"></script>
-<script src="bower_components/perfect-scrollbar"></script>
-<script src="bower_components/plugins"></script>
-<script src="bower_components/requirejs"></script>
-<script src="bower_components/screenfull"></script>
-<script src="bower_components/select2"></script>
-<script src="bower_components/select2-bootstrap-css"></script>
-<script src="bower_components/selectize"></script>
-<script src="bower_components/sifter"></script>
-<script src="bower_components/simple-line-icons"></script>
-<script src="bower_components/slimscroll"></script>
-<script src="bower_components/spin.js"></script>
-<script src="bower_components/sweetalert"></script>
-<script src="bower_components/tc-angular-chartjs"></script>
-<script src="bower_components/textAngular"></script>
-<script src="bower_components/themify-icons"></script>
-<script src="bower_components/underscore"></script>
-<script src="bower_components/v-accordion"></script>
-<script src="bower_components/venturocket-angular-slider"></script>
-<script src="bower_components/videogular"></script>
-<script src="bower_components/videogular-buffering"></script>
-<script src="bower_components/videogular-controls"></script>
-<script src="bower_components/videogular-ima-ads"></script>
-<script src="bower_components/videogular-overlay-play"></script>
-<script src="bower_components/videogular-poster"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/ngstorage/ngStorage.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-aside/dist/js/angular-aside.js"></script>
+<script src="bower_components/angular-ui-utils/index.js"></script>
+<script src="bower_components/angular-ui-scroll/dist/ui-scroll.js"></script>
+<script src="bower_components/angular-ui-scrollpoint/dist/scrollpoint.js"></script>
+<script src="bower_components/angular-ui-event/dist/event.js"></script>
+<script src="bower_components/angular-ui-mask/dist/mask.js"></script>
+<script src="bower_components/angular-ui-validate/dist/validate.js"></script>
+<script src="bower_components/angular-ui-indeterminate/dist/indeterminate.js"></script>
+<script src="bower_components/angular-ui-uploader/dist/uploader.js"></script>
+<script src="bower_components/angular-translate/angular-translate.js"></script>
+<script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+<script src="bower_components/angular-translate-loader-url/angular-translate-loader-url.js"></script>
+<script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+<script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+
+
+
+
+
+
+
+
+
 
 
 </body>
