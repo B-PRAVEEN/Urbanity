@@ -387,7 +387,7 @@ app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedi
     console.log('logged in with twitter');
     res.status(200).json(req.user);
     // res.redirect('/');
-
+  });
 var mongooseUri = 'mongodb://localhost/urbanity';
 mongoose.connect(mongooseUri);
 
@@ -406,4 +406,4 @@ io.on('connection', function (socket) {
 
 app.listen(port, function () {
   console.log('This is port:', port);
-})});
+});
