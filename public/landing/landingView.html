@@ -1,40 +1,19 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<!--<![endif]-->
-<html lang="en" class="no-js" data-ng-app='app'>
-<head>
-    <meta charset="utf-8">
-    <title>Urbanity: Social Network for Travelers & Expatriates</title>
-    <meta name="Urbanity" content="Social Network for Expatriates, Travelers and Tourists">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="../../public/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../../public/assets/css/flexslider.min.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../../public/assets/css/line-icons.min.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../../public/assets/css/elegant-icons.min.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../../public/assets/css/lightbox.min.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../../public/assets/css/theme-aquatica.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../../public/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+ <!--visually inform user that our app is loading-->
 
-    <!--[if gte IE 9]>
-    <link rel="stylesheet" type="text/css" href="../../public/assets/css/ie9.css" />
-    <![endif]-->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700' rel='stylesheet' type='text/css' />
-    <script src="../../public/assets/js/modernizr.custom.93575.js"></script>
-    <link href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic" rel="stylesheet" type="text/css">
-    <link href="../../public/assets/css/font-helvetica.css" rel="stylesheet" type="text/css">
-</head>
+<div class="loader">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>
 
-<body ng-controller="landingCtrl">
+<div class="nav-container">
+    <nav class="top-bar overlay-bar">
+        <div class="container">
 
-<nav class="top-bar overlay-bar">
-    <div class="container">
-        <div class="row utility-menu">
-            <div class="col-sm-12">
-                <div class="utility-inner clearfix">
+            <div class="row utility-menu">
+                <div class="col-sm-12">
+                    <div class="utility-inner clearfix">
                         <ul class="social-icons text-left">
                             <li>
                                 <a href="#">
@@ -59,33 +38,47 @@
                                 </a>
                             </li>
                         </ul>
+
+                        <!--Begin SignIn Modal Hook-->
+
                             <div class="pull-right loginModal" ng-show="showModal">
-                                <modal title="Login form" visible="showModal">
-                                    <form data-ng-submit="signin()" class="form-login landingLogin" autocomplete="off">
-                                        <div class="form-group">
-                                            <label for="email">Email Address</label>
-                                            <input type="email" class="form-control" id="email" placeholder="Email Address" />
-                                            <br>
-                                            <label for="password">Password</label>
-                                                <input type="password" class="form-control" id="password" placeholder="Password" />
-                                        </div>
-                                        <button type="submit" class="btn btn-default">Submit</button>
-                                    </form>
-                                </modal>
+                            <modal title="Login form" visible="showModal">
+                                <form data-ng-submit="signin()" class="form-login landingLogin" autocomplete="off">
+                                    <div class="form-group">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" class="form-control" id="email"
+                                               placeholder="Email Address"/>
+                                        <br>
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="password"
+                                               placeholder="Password"/>
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Submit</button>
+                                </form>
+                            </modal>
                             </div>
+
                         <div class="pull-right">
-                                <button ng-click="toggleModal()" class="btn btn-primary login-button btn-xs">Login</button>
-                                <button ng-click="toggleModal()"  class="btn btn-primary btn-filled btn-xs">Signup</button>
+                            <button ng-click="toggleModal()" class="btn btn-primary login-button btn-xs">Login</button>
+                            <button ng-click="toggleModal()" class="btn btn-primary btn-filled btn-xs">Signup</button>
                         </div>
-                </div>
-                    <!--<a href="#" class="language"><img alt="English" src="img/english.png"></a>-->
-                    <!--<a href="#" class="language"><img alt="English" src="img/denmark.png"></a>-->
+                    </div>
+
+                    <!--End SignIn Modal Hook-->
+
                 </div>
             </div>
             <span class="alt-font"><i class="icon icon_mail"></i> hello@urbanityapp.com</span>
+
+            <div class="mobile-toggle">
+                <i class="icon icon_menu"></i>
+            </div>
+
         </div>
-    </div><!--end of row-->
-</nav><!--end of container-->
+        <!--end of row-->
+    </nav>
+</div>
+<!--end of container-->
 
 <div class="main-container">
     <section class="hero-slider">
@@ -93,15 +86,15 @@
             <li class="overlay hover-background">
 
                 <div class="background-image-holder">
-                    <img class="background-image" alt="Background Image" src="../../public/assets/img/layer1.jpg">
+                    <img class="background-image" alt="Background Image" src="assets/img/layer1.jpg">
                 </div>
 
                 <div class="foreground-image-holder layer-1">
-                    <img class="background-image" alt="Background Image" src="../../public/assets/img/layer2.png">
+                    <img class="background-image" alt="Background Image" src="assets/img/layer2.png">
                 </div>
 
                 <div class="foreground-image-holder layer-2">
-                    <img class="background-image" alt="Background Image" src="../../public/assets/img/layer3.png">
+                    <img class="background-image" alt="Background Image" src="assets/img/layer3.png">
                 </div>
 
                 <div class="container align-vertical">
@@ -117,7 +110,7 @@
 
             <li class="overlay">
                 <div class="background-image-holder parallax-background">
-                    <img class="background-image" alt="Background Image" src="../../public/assets/img/red_umbrella.jpeg">
+                    <img class="background-image" alt="Background Image" src="assets/img/red_umbrella.jpeg">
                 </div>
 
                 <div class="container align-vertical">
@@ -135,13 +128,14 @@
 
     <section class="image-divider overlay duplicatable-content">
         <div class="background-image-holder parallax-background">
-            <img class="background-img" alt="Background Image" src="../../public/assets/img/blur-background08.jpg">
+            <img class="background-img" alt="Background Image" src="assets/img/blur-background08.jpg">
         </div>
 
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2 text-center">
                     <span class="text-white alt-font">What we offer</span>
+
                     <h1 class="text-white">A Real Connection with Real People</h1>
                 </div>
             </div>
@@ -149,24 +143,32 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="feature feature-icon-large">
-                        <i class="text-white icon icon-notebook"></i>
+                        <i class="text-white icon icon-global"></i>
                         <h5 class="text-white">A Social Network for Migrant Workers</h5>
-                        <p class="text-white">Moving and adjusting to a new home is difficult. Our goal is to make it easier for you! Different places have vastly different ways of life. Wouldn't it be great if you already had friends where you are planning to move? We are here to make that possible!&nbsp;</p>
+
+                        <p class="text-white">Moving and adjusting to a new home is difficult. Our goal is to make it
+                            easier for you! Different places have vastly different ways of life. Wouldn't it be great if
+                            you already had friends where you are planning to move? We are here to make that possible!&nbsp;</p>
                     </div>
                 </div>
 
                 <div class="col-sm-4">
                     <div class="feature feature-icon-large">
-                        <i class="text-white icon icon-genius"></i>
+                        <i class="text-white icon icon-compass"></i>
                         <h5 class="text-white">A Social Network for Travelers</h5>
-                        <p class="text-white">Traveling is one of the best joys of life! It becomes even more exciting in the company of friends. We live in an increasingly connected world, yet our world is more complex than ever. We want you to travel with the peace and comfort of knowing that a friend is nearby, when needed.&nbsp;</p>
+
+                        <p class="text-white">Traveling is one of the best joys of life! It becomes even more exciting
+                            in the company of friends. We live in an increasingly connected world, yet our world is more
+                            complex than ever. We want you to travel with the peace and comfort of knowing that a friend
+                            is nearby, when needed.&nbsp;</p>
                     </div>
                 </div>
 
                 <div class="col-sm-4">
                     <div class="feature feature-icon-large">
-                        <i class="text-white icon icon-gift"></i>
+                        <i class="text-white icon icon-chat"></i>
                         <h5 class="text-white">A Social Network for 'Global Locals'</h5>
+
                         <p class="text-white">Planet Earth is one big family. The internet is great (we love it!), but it does not replace "insider" tips and advice from well-informed locals. We cordially invite you to join us as a "Global Local' who helps expatriates, migrant workers, tourists, and travelers become familiar with their new surroundings!</p>
                     </div>
                 </div>
@@ -176,7 +178,7 @@
 
     <header class="signup">
         <div class="background-image-holder parallax-background">
-            <img class="background-image" alt="Background Image" src="../../public/assets/img/blur-background09.jpg">
+            <img class="background-image" alt="Background Image" src="assets/img/blur-background09.jpg">
         </div>
 
         <div class="container">
@@ -278,55 +280,3 @@
 
 <div class="footer-container">
 </div>
-
-
-
-
-<!-- ANGULAR -->
-<script type="text/javascript" src="../app.js"></script>
-<script src="https://www.youtube.com/iframe_api"></script>
-<script src="../../public/assets/js/jquery.min.js"></script>
-<script src="../../public/assets/js/jquery.plugin.min.js"></script>
-<script src="../../public/assets/js/bootstrap/bootstrap.min.js"></script>
-<script src="../../public/assets/js/jquery.flexslider-min.js"></script>
-<script src="../../public/assets/js/smooth-scroll.min.js"></script>
-<script src="../../public/assets/js/skrollr.min.js"></script>
-<script src="../../public/assets/js/spectragram.min.js"></script>
-<script src="../../public/assets/js/scrollReveal.min.js"></script>
-<script src="../../public/assets/js/isotope.min.js"></script>
-<script src="../../public/assets/js/twitterFetcher_v10_min.js"></script>
-<script src="../../public/assets/js/lightbox.min.js"></script>
-<script src="../../public/assets/js/jquery.countdown.min.js"></script>
-<script src="../../public/assets/js/scripts.js"></script>
-
-<script src="../bower_components/angular/angular.js"></script>
-<script src="../bower_components/oclazyload/dist/ocLazyLoad.js"></script>
-<script src="../../public/assets/js/services/ui-load.js"></script>
-<script src="../bower_components/angular-animate/angular-animate.js"></script>
-<script src="../bower_components/angular-cookies/angular-cookies.js"></script>
-<script src="../bower_components/angular-resource/angular-resource.js"></script>
-<script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
-<script src="../bower_components/angular-ui-utils/index.js"></script>
-<script src="../bower_components/angular-scroll/angular-scroll.js"></script>
-<script src="../bower_components/angular-ui-scroll/dist/ui-scroll.js"></script>
-<script src="../bower_components/angular-ui-scrollpoint/dist/scrollpoint.js"></script>
-<script src="../bower_components/angular-ui-event/dist/event.js"></script>
-<script src="../bower_components/angular-ui-mask/dist/mask.js"></script>
-<script src="../bower_components/angular-ui-select/dist/select.js"></script>
-<script src="../bower_components/angular-ui-switch/angular-ui-switch.js"></script>
-<script src="../bower_components/angular-ui-uploader/dist/uploader.js"></script>
-<script src="../bower_components/angular-ui-validate/dist/validate.js"></script>
-<script src="../bower_components/angular-ui-indeterminate/dist/indeterminate.js"></script>
-
-
-<script src="../bower_components/angular-touch/angular-touch.js"></script>
-<script src="../bower_components/angular-translate/angular-translate.js"></script>
-<script src="../bower_components/ngstorage/ngStorage.js"></script>
-<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>
-<script src="../../public/assets/js/directives/ui-jq.js"></script>
-<script src="../bower_components/angular-translate/angular-translate.js"></script>
-<script type="text/javascript" src="../../public/landing/landingCtrl.js"></script>
-
-</body>
-</html>

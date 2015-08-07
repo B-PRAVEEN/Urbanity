@@ -10,35 +10,38 @@ angular.module('app')
     .config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
         function($stateProvider, $urlRouterProvider, JQ_CONFIG) {
             $urlRouterProvider
-                .otherwise('/');
+                .otherwise('/welcome');
             $stateProvider.
+                state('landing', {
+                    url: '^/welcome',
+                    templateUrl: 'landing/landingView.html'
+                }).
                 state('app', {
                 abstract: true,
                 url: '/app',
                 templateUrl: 'app.html'
                 }).
                 state('app.page', {
-                    url: '/page',
+                    url: '^/home',
                     template: '<div ui-view class="fade-in-down"></div>'
-
                 }).
                 state('app.page.profile', {
-                    url: '/profile',
+                    url: '^/profile',
                     templateUrl: 'userProfile/profileView.html'
                 }).
-                state('nav.profilePost', {
+                state('app.profilePost', {
                     url: '/post',
                     templateUrl: 'views/makePostView.html'
                 }).
-                state('nav.profileListing', {
+                state('app.profileListing', {
                     url: '/search',
                     templateUrl: 'views/profileListingView.html'
                 }).
-                state('nav.profileSettings', {
+                state('app.profileSettings', {
                     url: '/profileSettings',
                     templateUrl: 'views/settings/editProfileView.html'
                 }).
-                state('nav.accountSettings', {
+                state('app.accountSettings', {
                     url: '/accountsettings',
                     templateUrl: 'views/settings/editAccountView.html'
                 }).
