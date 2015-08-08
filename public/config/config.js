@@ -1,3 +1,5 @@
+"use strict";
+
 
 var app = angular.module('app')
         .config(['$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
