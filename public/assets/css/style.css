@@ -1,26 +1,33 @@
-.social-icons.text-left {
+/*html, body {*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*margin: 0;*/
+    /*/!*padding: 5px;*!/*/
+/*}*/
+
+.landingsocial {
+    display: block;
     margin-top: 5px;
-    margin-left: 2px;
+    margin-left: 270px;
 }
 
 .loginModal {
     position: fixed;
-    top: 50px;
+    top: 45px;
     right: 240px;
     height: 200px;
     width: 400px;
-    padding: 40px;
     margin: 30px;
     background: rgba(0, 0, 0, 0.5);
     /*background-color: #eee;*/
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .form-control {
     margin: 10px;
 }
-.landingLogin {
-    height: 20px;
-}
+/*.landingLogin {*/
+    /*height: 20px;*/
+/*}*/
 .form-group {
     margin: 20px;
     width: inherit;
@@ -34,19 +41,13 @@
 .bg-linkedin {
     background-color: #396598;
 }
+
 /*.aside-wrap {*/
     /*box-sizing: border-box;*/
 /*}*/
 /*.aside-wrap {*/
     /*vertical-align: middle;*/
 /*}*/
-
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 5px;
-}
 
 .socialLogin {
     position: fixed;

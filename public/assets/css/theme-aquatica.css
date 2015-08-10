@@ -107,7 +107,6 @@ h6 {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
-    padding-left: 18px;
 }
 ul {
   list-style: none;
@@ -464,11 +463,11 @@ nav hr {
   padding-bottom: 16px;
 }
 .utility-menu .btn {
-  min-width: 60px;
+  min-width: 80px;
   padding-left: 18px;
   padding-right: 18px;
   margin-left: 8px;
-  margin-right: 0px;
+  margin-right: 10px;
 }
 .utility-menu span {
   display: inline-block;
@@ -4222,7 +4221,7 @@ footer.short-2 .contact-action:hover {
 .boxed-layout .main-container,
 .boxed-layout .footer-container,
 .boxed-layout nav {
-  max-width: 1280px;
+  max-width: 100%; /*originally 1280px;*/
   margin: 0 auto;
   left: 0;
   right: 0;

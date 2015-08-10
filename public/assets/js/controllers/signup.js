@@ -12,7 +12,7 @@ app.controller('SignupFormController', ['$scope', '$http', '$state', function($s
         if ( !response.data.user ) {
           $scope.authError = response;
         }else{
-          $state.go('app.home');
+          $state.go('app.profile');
         }
       }, function(x) {
         $scope.authError = 'Server Error';
