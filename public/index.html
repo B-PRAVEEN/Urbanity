@@ -1,72 +1,77 @@
 <!DOCTYPE html>
-<html lang="en" data-ng-app="app">
+<html class="no-js" lang="en" data-ng-app="app">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 
 <head>
-    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-    <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-    <!--[if gt IE 8]><!-->
-
     <meta charset="UTF-8" />
     <meta name="Urbanity" content="Social Network for Expatriates, Travelers and Tourists">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Urbanity: Social Network for Travelers & Expatriates</title>
-    <script src="assets/js/modernizr.custom.93575.js"></script>
-    <link rel="stylesheet" href="assets/css/app.min.css" type="text/css" />
+
+    <!--<link rel="stylesheet" href="assets/css/app.min.css" type="text/css" />-->
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css" type="text/css" />
+    <link href="assets/css/flexslider.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="assets/css/lightbox.min.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="assets/css/line-icons.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="assets/css/elegant-icons.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="assets/css/theme-aquatica.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="assets/css/font-helvetica.css" rel="stylesheet" type="text/css">
+
+
+    <!--[if gte IE 9]><link rel="stylesheet" type="text/css" href="assets/css/ie9.css" /><![endif]-->
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700' rel='stylesheet' type='text/css' />
+    <link href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic" rel="stylesheet" type="text/css" />
+    <script src="assets/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 
-<body ng-controller="AppCtrl">
+<body>
 
-<div class="app" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}" ui-view>
 
-    <!--<div data-ng-include=" 'app.html' "></div>-->
-    <!--<div data-ng-include=" 'home/homeView.html' "></div>-->
 
-</div>
+<div ui-view>
 
+
+    </div>
 
 <!-- Scripts -->
 
-    <!--jQuery-->
+    <!--ALL-->
+
 <!-- <script src="assets/js/app.min.js"></script> -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.plugin.min.js"></script>
-<script src="assets/js/jquery.flexslider-min.js"></script>
-<script src="assets/js/jquery.countdown.min.js"></script>
-<script src="assets/js/isotope.min.js"></script>
-<script src="assets/js/lightbox.min.js"></script>
-<script src="assets/js/scripts.js"></script>
-<script src="assets/js/scrollReveal.js"></script>
-<script src="assets/js/skrollr.min.js"></script>
-<script src="assets/js/smooth-scroll.js"></script>
-<script src="assets/js/spectragram.js"></script>
-<script src="assets/js/templates.js"></script>
-<script src="assets/js/twitterFetcher_v10_min.js"></script>
-<script src="assets/js/ui-nav.js"></script>
-<script src="assets/js/ui-toggle.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <!--jQuery-->
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.plugin.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.flexslider-min.js"></script>
+    <script src="assets/js/smooth-scroll.js"></script>
+    <script src="assets/js/skrollr.min.js"></script>
+    <script src="assets/js/spectragram.js"></script>
+    <script src="assets/js/scrollReveal.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/twitterFetcher_v10_min.js"></script>
+    <script src="assets/js/lightbox.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
 
 
-<!--<script src="assets/js/ui-jp.config.js"></script>-->
-<!--<script src="assets/js/ui-jp.js"></script>-->
+
+
+
 
     <!--Angular-->
 
+
 <script src="bower_components/angular/angular.js"></script>
-<script src="app.js"></script>
-<script src="assets/js/controllers/bootstrap.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-<script src="main.js"></script>
-<script src="config/config.js"></script>
-<script src="config/client.routes.js"></script>
-<script src="assets/js/config.lazyload.js"></script>
-<script src="bower_components/oclazyload/dist/ocLazyLoad.js"></script>
-<script src="assets/js/services/ui-load.js"></script>
-<script src="assets/js/directives/ui-jq.js"></script>
-<script src="assets/js/ui-jp.config.js"></script>
-<script src="assets/js/ui-jp.js"></script>
 <script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -90,14 +95,30 @@
 <script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
 
 
+<!--Project-->
+
+
+
+<script src="app.js"></script>
+<script src="config/config.js"></script>
+<script src="config/client.routes.js"></script>
+<script src="assets/js/services/ui-load.js"></script>
+<script src="assets/js/directives/ui-jq.js"></script>
+<script src="bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+<script src="assets/js/controllers/bootstrap.js"></script>
+<script src="assets/js/config.lazyload.js"></script>
+<script src="assets/js/ui-jp.config.js"></script>
+<script src="assets/js/ui-jp.js"></script>
+<script src="landingCtrl.js"></script>
+<script src="auth/authCtrl.js"></script>
 
 
 
 
 
 
+    </body>
 
 
 
-</body>
 </html>

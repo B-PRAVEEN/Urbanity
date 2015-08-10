@@ -1,19 +1,23 @@
-html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 5px;
-}
 
-.socialLogin {
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding: 5px;
-}
 
-.sidebar {
-  height: 100%;
-  width: 15%;
-  float: left;
-}
+        /*NOT BEING USED CURRENTLY*/
+
+/*html, body {*/
+  /*height: 100%;*/
+  /*width: 100%;*/
+  /*margin: 0;*/
+  /*padding: 5px;*/
+/*}*/
+
+/*.socialLogin {*/
+  /*position: fixed;*/
+  /*top: 0;*/
+  /*right: 0;*/
+  /*padding: 5px;*/
+/*}*/
+
+/*.sidebar {*/
+  /*height: 100%;*/
+  /*width: 15%;*/
+  /*float: left;*/
+/*}*/

@@ -7,71 +7,91 @@ angular.module('app')
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
         }])
-    .config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
-        function($stateProvider, $urlRouterProvider, JQ_CONFIG) {
+    .config(['$stateProvider', '$urlRouterProvider',
+        function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider
-                .otherwise('/');
+                .otherwise('/welcome');
             $stateProvider.
                 state('app', {
                 abstract: true,
                 url: '/app',
-                templateUrl: 'app.html'
+                templateUrl: 'index.html',
+                    controller: 'landingCtrl'
+                }).
+                state('welcome', {
+                    url: '^/welcome',
+                    templateUrl: 'landing/landingView.html',
+                    controller: 'authCtrl'
+                }).
+                state('access', {
+                    url: '/access',
+                    template: '<div ui-view class="fade-in-right-big smooth"></div>'
+                }).
+                state('access.signin', {
+                    url: '^/signin',
+                    templateUrl: 'auth/signinView.html',
+                    resolve: {
+                        deps: ['uiLoad',
+                            function( uiLoad ){
+                                return uiLoad.load( ['auth/authCtrl.js'] ); // NOT SURE IF I SHOULD TYPE CONTROLLER NAME OR THE PATH
+                            }]
+                    }
+                }).
+                state('access.signup', {
+                    url: '^/signup',
+                    templateUrl: 'auth/signupView.html',
+                    resolve: {
+                        deps: ['uiLoad',
+                            function( uiLoad ){
+                                return uiLoad.load( ['auth/authCtrl.js'] ); // NOT SURE IF I SHOULD TYPE CONTROLLER NAME OR THE PATH
+                            }]
+                    }
+                }).
+                state('access.404', {
+                    url: '^/404',
+                    templateUrl: 'auth/page_404.html'
+                }).
+                state('access.forgotpwd', {
+                    url: '^/forgotpwd',
+                    templateUrl: 'auth/page_forgotpwd.html'
+                }).
+                state('access.reset', {
+                    url: '^reset/:token',
+                    templateUrl: 'views/password/resetPasswordView.html'
+                }).
+                state('access.reset-invalid', {
+                    url: '^/resetfail',
+                    templateUrl: 'auth/resetInvalidView.html'
+                }).
+                state('access.reset-success', {
+                    url: '^/resetsuccess',
+                    templateUrl: 'views/password/resetSuccessView.html'
                 }).
                 state('app.page', {
-                    url: '/page',
+                    url: '^/home',
                     template: '<div ui-view class="fade-in-down"></div>'
-
                 }).
                 state('app.page.profile', {
-                    url: '/profile',
+                    url: '^/profile',
                     templateUrl: 'userProfile/profileView.html'
                 }).
-                state('nav.profilePost', {
+                state('app.profilePost', {
                     url: '/post',
                     templateUrl: 'views/makePostView.html'
                 }).
-                state('nav.profileListing', {
-                    url: '/search',
+                state('app.profileListing', {
+                    url: '^/profilelist',
                     templateUrl: 'views/profileListingView.html'
                 }).
-                state('nav.profileSettings', {
-                    url: '/profileSettings',
+                state('app.profileSettings', {
+                    url: '^/profsettings',
                     templateUrl: 'views/settings/editProfileView.html'
                 }).
-                state('nav.accountSettings', {
-                    url: '/accountsettings',
+                state('app.accountSettings', {
+                    url: '^/accsettings',
                     templateUrl: 'views/settings/editAccountView.html'
-                }).
-                state('password', {
-                    url: '/settings/password',
-                    templateUrl: 'views/settings/changePasswordView.html'
-                }).
-                state('signup', {
-                    url: '/signupView',
-                    templateUrl: 'views/authentication/signupView.html',
-                    controller: 'authentication/authCtrl.js'
-                }).
-                state('signin', {
-                    url: '/signinView',
-                    templateUrl: 'views/authentication/signinView.html',
-                    controller: 'authentication/authCtrl.js'
-                }).
-                state('forgot', {
-                    url: 'password/forgot',
-                    templateUrl: 'views/password/forgotPasswordView.html'
-                }).
-                state('reset-invalid', {
-                    url: 'password/reset/invalid',
-                    templateUrl: 'views/password/resetInvalidView.html'
-                }).
-                state('reset-success', {
-                    url: 'password/reset/success',
-                    templateUrl: 'views/password/resetSuccessView.html'
-                }).
-                state('reset', {
-                    url: 'password/reset/:token',
-                    templateUrl: 'views/password/resetPasswordView.html'
                 })
+
         }
     ]
 );
