@@ -21,7 +21,7 @@ app.use(express.static(__dirname + '/public'));
 var app2 = express().createServer;
 var io = require('socket.io').listen(app2);
 
-var env = require('./public/config/env.js');
+var env = require('./app/config/env.js');
 var port = process.env.PORT || env.port;
 var bcrypt = require('bcrypt');
 
