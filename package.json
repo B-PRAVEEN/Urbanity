@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Aluma/Urbanity#readme",
   "dependencies": {
+    "angular-translate": "^2.7.2",
+    "angular-translate-loader-url": "^2.7.2",
     "bcrypt": "^0.8.4",
     "body-parser": "^1.13.2",
     "connect-mongo": "^0.8.2",
@@ -25,6 +27,7 @@
     "cors": "^2.7.1",
     "express": "^4.13.1",
     "express-session": "^1.11.3",
+    "livereload-js": "^2.2.2",
     "mongoose": "^4.1.0",
     "passport": "^0.2.2",
     "passport-facebook": "^2.0.0",

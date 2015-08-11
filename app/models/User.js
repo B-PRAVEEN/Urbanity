@@ -1,12 +1,37 @@
-var mongoose = require('mongoose');
-var bcrypt = require('bcrypt');
-var Schema = mongoose.Schema;
-var q = require('q');
+var mongoose = require('mongoose'),
+bcrypt = require('bcrypt'),
+Schema = mongoose.Schema,
+q = require('q');
 
-var userSchema = new Schema({
+
+// previous code was new Schema instead of mongoose.Schema if you'd like to change it
+
+var userSchema = mongoose.Schema({
+    local            : {
+        email        : String,
+        password     : String
+    },
+    facebook         : {
+        id           : String,
+        token        : String,
+        email        : String,
+        name         : String
+    },
+    twitter          : {
+        id           : String,
+        token        : String,
+        displayName  : String,
+        username     : String
+    },
+    google           : {
+        id           : String,
+        token        : String,
+        email        : String,
+        name         : String
+    },
     name: {
-        first: {type: String, trim: true, default: '', /*validate: [validateLocalStrategyProperty, 'Please enter your first name']*/},
-        last: {type: String, trim: true, default: '', /*validate: [validateLocalStrategyProperty, 'Please enter your last name']*/}
+        first: {type: String, trim: true, default: '' /*validate: [validateLocalStrategyProperty, 'Please enter your first name']*/},
+        last: {type: String, trim: true, default: '' /*validate: [validateLocalStrategyProperty, 'Please enter your last name']*/}
     },
     gender: {
         type: String,
@@ -53,7 +78,7 @@ var userSchema = new Schema({
     email: {
         type: String,
         trim: true,
-        default: '',
+        default: ''
         //validate: [validateLocalStrategyProperty, 'Please provide your email'],
         //match: [/.+\@.+\..+/, 'Please enter a valid email address']
     },
@@ -65,9 +90,9 @@ var userSchema = new Schema({
     },
     password: {
         type: String,
-        default: '',
+        default: ''
         //validate: [validateLocalStrategyPassword, 'Password should be at least 6 characters']
-    },
+    }
 });
 
 //pre('save') is mongoose middleware that runs before every user is created
@@ -94,6 +119,19 @@ userSchema.methods.verifyPassword = function(password) {
     });
     return deferred.promise;
 };
+
+
+// methods ====================== (alternate to the method directly above)
+// generating a hash
+//userSchema.methods.generateHash = function(password) {
+//    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+//};
+
+// checking if password is valid
+//userSchema.methods.validPassword = function(password) {
+//    return bcrypt.compareSync(password, this.local.password);
+//};
+
 
 module.exports = mongoose.model('User', userSchema);
 

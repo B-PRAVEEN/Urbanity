@@ -39,7 +39,7 @@ angular.module('app')
                 }).
                 state('access.signup', {
                     url: '^/signup',
-                    templateUrl: 'auth/signupView.html',
+                    templateUrl: 'auth/signup.html',
                     resolve: {
                         deps: ['uiLoad',
                             function( uiLoad ){
