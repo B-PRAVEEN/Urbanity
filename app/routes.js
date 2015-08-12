@@ -21,11 +21,11 @@ module.exports = function(app, passport) {
 
 
     // our primary SIGN-UP form
-    app.get('/signup', function(req, res) {
+    // app.get('/signup', function(req, res) {
 
-        // render the page and pass in any flash data if it exists
-        res.render('signup.html', { message: req.flash('signupMessage') });
-    });
+    //     // render the page and pass in any flash data if it exists
+    //     res.render('signup.html', { message: req.flash('signupMessage') });
+    // });
 
     // process the signup form
     // app.post('/signup', do all our PASSPORT STUFF HERE);
@@ -61,10 +61,11 @@ function isLoggedIn(req, res, next) {
 
     // process the signup form
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect : '/profile', // redirect to the secure profile section
-        failureRedirect : '/signup', // redirect back to the signup page if there is an error
-        failureFlash : true // allow flash messages
-    }));
+        failureRedirect : '/signup'// redirect back to the signup page if there is an error
+    }), function(req, res) {
+        console.log('posted');
+        res.status(200).json(req.user);
+    });
 
     app.get('/api/models/user', function (req, res) {
 

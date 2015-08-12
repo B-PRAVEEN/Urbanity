@@ -48,9 +48,9 @@ var userSchema = mongoose.Schema({
         trim: true,
         default: ''
     },
-    address: {
-        type: [addressSchema]
-    },
+    // address: {
+    //     type: [addressSchema]
+    // },
     nationality: {
         type: String,
         trim: true,
@@ -123,14 +123,14 @@ userSchema.methods.verifyPassword = function(password) {
 
 // methods ====================== (alternate to the method directly above)
 // generating a hash
-//userSchema.methods.generateHash = function(password) {
-//    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-//};
+userSchema.methods.generateHash = function(password) {
+   return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
 
 // checking if password is valid
-//userSchema.methods.validPassword = function(password) {
-//    return bcrypt.compareSync(password, this.local.password);
-//};
+userSchema.methods.validPassword = function(password) {
+   return bcrypt.compareSync(password, this.local.password);
+};
 
 
 module.exports = mongoose.model('User', userSchema);

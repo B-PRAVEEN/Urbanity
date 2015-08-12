@@ -1,38 +1,59 @@
-var mymodal = angular.module('app');
+var auth = angular.module('app');
 
-mymodal.controller('authCtrl', ['$scope', '$http', '$location',
-    function($scope, $http, $location) {
+auth.controller('authCtrl', ['$scope', '$http', '$state', '$location',
+    function($scope, $http, $state, $location) {
         $scope.showModal = false;
         $scope.toggleModal = function () {
         $scope.showModal = !$scope.showModal;
         };
 
-
-        'use strict';
-
-
-        var Signup = angular.module('app');
-
-// signup controller
-        Signup.controller('signupCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
-            $scope.user = {};
-            $scope.authError = null;
+        $scope.user = {};
             $scope.signup = function() {
                 $scope.authError = null;
+                console.log('signup');
                 // Try to create
-                $http.post('/signup', {name: $scope.user.username, email: $scope.user.email, password: $scope.user.password})
-                    .then(function(response) {
-                        if ( !response.data.user ) {
-                            $scope.authError = response;
-                        }else{
-                            $state.go('app.page.profile');
-                        }
-                    }, function(x) {
-                        $scope.authError = 'Server Error';
-                    });
+                $http.post('/signup', {email: $scope.user.email, password: $scope.user.password})
+                    .success(function(response) {
+                        console.log(response)
+                    $state.go('app.page.profile');
+                })
+                // $http.post('/signup', {email: $scope.user.email, password: $scope.user.password})
+                //     .then(function(response) {
+                //         if ( !response.data.user ) {
+                //             $scope.authError = response;
+                //         }else{
+                //             $state.go('app.page.profile');
+                //         }
+                //     }, function(x) {
+                //         $scope.authError = 'Server Error';
+                //     });
             };
-        }])
-        ;
+
+
+//         var Signup = angular.module('app');
+
+// // signup controller
+//         Signup.controller('signupCtrl', ['$scope', '$http', '$state', function($scope, $http, $state) {
+//             $scope.user = {};
+//             $scope.authError = null;
+//             var vm = this;
+//             vm.signup = function() {
+//                 $scope.authError = null;
+//                 console.log('signup');
+//                 // Try to create
+//                 $http.post('/signup', {name: $scope.user.username, email: $scope.user.email, password: $scope.user.password})
+//                     .then(function(response) {
+//                         if ( !response.data.user ) {
+//                             $scope.authError = response;
+//                         }else{
+//                             $state.go('app.page.profile');
+//                         }
+//                     }, function(x) {
+//                         $scope.authError = 'Server Error';
+//                     });
+//             };
+//         }])
+//         ;
 
 
         //$scope.authCtrl = Authentication;

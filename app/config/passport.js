@@ -2,7 +2,7 @@
 var LocalStrategy = require('passport-local').Strategy;
 
 // load up the user model
-//var User = require('/models/User');
+var User = require('../models/User');
 // or I think we could use 'User' instead of the path since we are exporting that
 
 // expose this function to our app using module.exports
@@ -19,6 +19,7 @@ module.exports = function (passport) {
 
     // used to deserialize the user
     passport.deserializeUser(function (id, done) {
+        console.log(id);
         User.findById(id, function (err, user) {
             done(err, user);
         });
@@ -50,7 +51,7 @@ module.exports = function (passport) {
 
                     // check to see if theres already a user with that email
                     if (user) {
-                        return done(null, false, req.flash('signupMessage', 'That email is already registered with us.'));
+                        return done(null, user);
                     } else {
 
                         // if there is no user with that email
