@@ -9,7 +9,7 @@ module.exports = function(app, passport) {
         res.render('Landing/landingView.html'); // loads our master index file that supports our landingView
     });
 
-        // our priamry LOGIN/SIGN-IN route
+        // our primary LOGIN/SIGN-IN route
     app.get('/signin', function(req, res) {
 
         // render the page and pass in any flash data if it exists
