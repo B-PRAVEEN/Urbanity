@@ -1,0 +1,176 @@
+<!-- list -->
+<ul class="nav">
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span translate="aside.nav.HEADER">Navigation</span>
+    </li>
+    <li>
+        <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+            <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+            <span class="font-bold" translate="aside.nav.DASHBOARD">Home</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span translate="aside.nav.DASHBOARD">Account</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.home">
+                    <span>Account Settings</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="">
+                    <b class="label bg-info pull-right">N</b>
+                    <span>Profile Settings</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li ui-sref-active="active">
+        <a ui-sref="app.calendar">
+            <i class="glyphicon glyphicon-calendar icon text-info-dker"></i>
+            <span class="font-bold" translate="aside.nav.CALENDAR">Calendar</span>
+        </a>
+    </li>
+    <li ui-sref-active="active">
+        <a ui-sref="app.mail.list">
+            <b class="badge bg-info pull-right">9</b>
+            <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
+            <span class="font-bold" translate="aside.nav.EMAIL">Email</span>
+        </a>
+    </li>
+    <li>
+        <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+            <i class="glyphicon glyphicon-th-large icon text-success"></i>
+            <span class="font-bold">Features</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span>Features</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.todo">
+                    <span>Todo</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="apps.note">
+                    <span>Note</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="apps.contact">
+                    <span>Contacts</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="line dk"></li>
+
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span translate="aside.nav.components.COMPONENTS"></span>
+    </li>
+    <li>
+        <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+            <b class="badge bg-info pull-right">3</b>
+            <i class="glyphicon glyphicon-th"></i>
+            <span></span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span>More</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="nav.profileSettings">
+                    <span>Profile Settings</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="nav.accountSettings">
+                    <span>Account Settings</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="app.ui.googlemap">
+                            <span>Google Maps</span>
+                        </a>
+                    </li>
+            </li>
+        </ul>
+    </li>
+</ul>
+</li>
+
+<li ng-class="{active:$state.includes('app.page')}">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+        <i class="glyphicon glyphicon-file icon"></i>
+        <span translate="aside.nav.components.pages.PAGES">Pages</span>
+    </a>
+    <ul class="nav nav-sub dk">
+        <li class="nav-sub-header">
+            <a href>
+                <span translate="aside.nav.components.pages.PAGES">Pages</span>
+            </a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="app.page.profile">
+                <span translate="aside.nav.components.pages.PROFILE">Profile</span>
+            </a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="app.page.post">
+                <span translate="aside.nav.components.pages.POST">Post</span>
+            </a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="app.page.search">
+                <span translate="aside.nav.components.pages.SEARCH">Search</span>
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="line dk hidden-folded"></li>
+
+<li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span translate="aside.nav.your_stuff.YOUR_STUFF">Your Stuff</span>
+</li>
+<li>
+    <a ui-sref="app.page.profile">
+        <i class="icon-user icon text-success-lter"></i>
+        <b class="badge bg-success pull-right">70%</b>
+        <span translate="aside.nav.your_stuff.PROFILE">Profile</span>
+    </a>
+</li>
+<li>
+    <a ui-sref="app.docs">
+        <i class="icon-question icon"></i>
+        <span translate="aside.nav.your_stuff.DOCUMENTS">Documents</span>
+    </a>
+</li>
+</ul>
+<!-- / list -->

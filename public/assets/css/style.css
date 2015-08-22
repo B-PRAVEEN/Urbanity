@@ -1,0 +1,49 @@
+.landingsocial {
+    display: block;
+    margin-top: 5px;
+    margin-left: 400px;
+}
+
+.loginModal {
+    position: fixed;
+    top: 60px;
+    right: 350px;
+    height: 200px;
+    width: 400px;
+    margin: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+.form-control {
+    margin: 10px;
+}
+.form-group {
+    margin: 20px;
+    width: inherit;
+    align-self: center;
+}
+.btn-default {
+    margin: inherit;
+    width: inherit;
+}
+
+.bg-linkedin {
+    background-color: #396598;
+}
+
+.socialLogin {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 5px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 15%;
+    float: left;
+}
+
+.text-lt .app-title {
+    font-size: 20px;
+}

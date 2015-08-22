@@ -1,0 +1,73 @@
+<div class="aside-wrap">
+
+
+  <div class="navi-wrap">
+    <!-- user -->
+    <div class="clearfix hidden-xs text-center hide" id="aside-user">
+      <div class="dropdown wrapper" dropdown>
+        <a ui-sref="app.page.profile">
+          <span class="thumb-lg w-auto-folded avatar m-t-sm">
+            <img src="assets/img/jmsm.jpg" class="img-full" alt="...">
+          </span>
+        </a>
+        <a href class="dropdown-toggle hidden-folded" dropdown-toggle>
+          <span class="clear">
+            <span class="block m-t-sm">
+              <strong class="font-bold text-lt">Jimmy Thanki</strong>
+              <b class="caret"></b>
+            </span>
+            <span class="text-muted text-xs block">Web Developer</span>
+          </span>
+        </a>
+        <!-- dropdown -->
+        <ul class="dropdown-menu animated fadeInRight w hidden-folded">
+          <li class="wrapper b-b m-b-sm bg-info m-t-n-xs">
+            <span class="arrow top hidden-folded arrow-info"></span>
+            <div>
+              <p>Profile: 70% Complete</p>
+            </div>
+            <progressbar value="70" type="white" class="progress-xs m-b-none dker"></progressbar>
+          </li>
+          <li>
+            <a href>Settings</a>
+          </li>
+          <li>
+            <a ui-sref="app.page.profile">Profile</a>
+          </li>
+          <li>
+            <a href>
+              <span class="badge bg-danger pull-right">3</span>
+              Notifications
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a ui-sref="access.signin">Logout</a>
+          </li>
+        </ul>
+        <!-- / dropdown -->
+      </div>
+      <div class="line dk hidden-folded"></div>
+    </div>
+    <!-- / user -->
+
+    <!-- nav -->
+    <nav ui-nav class="navi clearfix" ng-include="'partials/nav.html'"></nav>
+    <!-- nav -->
+
+    <!-- aside footer -->
+    <div class="wrapper m-t">
+      <div class="text-center-folded">
+        <span class="pull-right pull-none-folded">70%</span>
+        <span class="hidden-folded" translate="aside.MILESTONE">Profile Completion</span>
+      </div>
+      <progressbar value="70" class="progress-xxs m-t-sm dk" type="info"></progressbar>
+      <div class="text-center-folded">
+        <span class="pull-right pull-none-folded">85%</span>
+        <span class="hidden-folded" translate="aside.RELEASE">Rating</span>
+      </div>
+      <progressbar value="85" class="progress-xxs m-t-sm dk" type="primary"></progressbar>
+    </div>
+    <!-- / aside footer -->
+  </div>
+</div>
